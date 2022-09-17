@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace oodb.Classes
+{
+    internal class TaskTable
+    {
+        [DisplayName("id")]
+        public string id { get; set; }
+
+        [DisplayName("Сотрудник")]
+        public Staff staff { get; set; }
+
+        [DisplayName("Зал")]
+        public Hall hall { get; set; }
+
+        [DisplayName("Клиент")]
+        public Client client { get; set; }
+
+        [DisplayName("Дата занятия")]
+        public DateTime dateLesson { get; set; }
+
+        [DisplayName("Продолжительность занятия")]
+        public int duration { get; set; }
+
+        public TaskTable()
+        {
+
+        }
+
+        public TaskTable(Staff staff, Hall hall, Client client, DateTime dateLesson, int duration)
+        {
+            this.staff = staff;
+            this.hall = hall;
+            this.client = client;
+            this.dateLesson = dateLesson;
+            this.duration = duration;
+        }
+    }
+}
