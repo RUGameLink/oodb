@@ -17,11 +17,12 @@ namespace oodb.Classes
 
         public Hall()
         {
-                
+            id = Guid.NewGuid().ToString();
         }
 
         public Hall(string title)
         {
+            id = Guid.NewGuid().ToString();
             this.title = title;
         }
     }

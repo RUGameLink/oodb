@@ -22,18 +22,19 @@ namespace oodb.Classes
         public Client client { get; set; }
 
         [DisplayName("Дата занятия")]
-        public DateTime dateLesson { get; set; }
+        public string dateLesson { get; set; }
 
         [DisplayName("Продолжительность занятия")]
         public int duration { get; set; }
 
         public TaskTable()
         {
-
+            id = Guid.NewGuid().ToString();
         }
 
-        public TaskTable(Staff staff, Hall hall, Client client, DateTime dateLesson, int duration)
+        public TaskTable(Staff staff, Hall hall, Client client, string dateLesson, int duration)
         {
+            id = Guid.NewGuid().ToString();
             this.staff = staff;
             this.hall = hall;
             this.client = client;

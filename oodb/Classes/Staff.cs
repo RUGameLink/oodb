@@ -29,11 +29,12 @@ namespace oodb.Classes
 
         public Staff()
         {
-
+            id = Guid.NewGuid().ToString();
         }
 
         public Staff(string adress, string phone, string name, string surname, string patronymic)
         {
+            id = Guid.NewGuid().ToString();
             this.adress = adress;
             this.phone = phone;
             this.name = name;

@@ -19,11 +19,12 @@ namespace oodb.Classes
 
         public Service()
         {
-
+            id = Guid.NewGuid().ToString();
         }
 
         public Service(string title, int price)
         {
+            id = Guid.NewGuid().ToString();
             this.title = title;
             this.price = price;
         }
