@@ -10,7 +10,7 @@ namespace oodb.Classes
 {
     internal class DataBase
     {
-        const String filename = @"pricelist.yap";
+        //const String filename = @"gym.yap";
         IObjectContainer db;
         public void dbConnect()
         {
