@@ -87,6 +87,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\oodb.Classes.Client.datasource" />
+    <None Include="Properties\DataSources\oodb.Classes.ClubCard.datasource" />
     <None Include="Properties\DataSources\oodb.Classes.Hall.datasource" />
     <None Include="Properties\DataSources\oodb.Classes.Service.datasource" />
     <None Include="Properties\Settings.settings">

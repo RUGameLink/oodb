@@ -251,6 +251,7 @@ namespace oodb
             selectedHall.title = dgvHall.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
         #endregion
+        #region работа с клиентом
         private void cbClientIsEdit_CheckedChanged(object sender, EventArgs e)
         {
             if(cbClientIsEdit.Checked == true)
@@ -437,6 +438,23 @@ namespace oodb
             if (dialogResult == DialogResult.Yes)
             {
                 dataBase.UpdateClient(dgvClient.CurrentRow.DataBoundItem as Client);
+            }
+        }
+        #endregion
+        private void dgvClubCard_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (dgvClubCard.Columns[e.ColumnIndex].Index == dgvClubCard.Columns.Count - 1)
+            {
+                if (messageBoxClickResult("Удалить эту запись?") == DialogResult.Yes)
+                {
+                    var id = dgvClubCard.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    clubCardBindingSource.RemoveAt(e.RowIndex);
+                    dataBase.DeleteClubCard(id);
+                }
             }
         }
     }

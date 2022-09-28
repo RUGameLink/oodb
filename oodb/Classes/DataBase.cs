@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -92,5 +93,20 @@ namespace oodb.Classes
             db.Store(found);
         }
         #endregion
+        #region Работа с абониментом
+        public void AddClubCard(ClubCard clubCard)
+        {
+            db.Store(clubCard);
+        }
+        public void DeleteClubCard(string id)
+        {
+            var found = db.Query<ClubCard>(cc => cc.id == id)[0];
+            db.Delete(found);
+        }
+        public List<ClubCard> GetClubCard()
+        {
+            return db.Query<ClubCard>().ToList();
+        }
+        #endregion 
     }
 }

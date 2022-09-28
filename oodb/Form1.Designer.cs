@@ -76,6 +76,16 @@
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patronymicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dgvClubCard = new System.Windows.Forms.DataGridView();
+            this.clubCardBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clubCardDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,6 +98,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -95,6 +108,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(22, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -551,6 +565,93 @@
             // 
             this.clientBindingSource.DataSource = typeof(oodb.Classes.Client);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dgvClubCard);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1031, 526);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Абонименты";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dgvClubCard
+            // 
+            this.dgvClubCard.AllowUserToAddRows = false;
+            this.dgvClubCard.AutoGenerateColumns = false;
+            this.dgvClubCard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClubCard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn3,
+            this.clientDataGridViewTextBoxColumn,
+            this.serviceDataGridViewTextBoxColumn,
+            this.startCardDataGridViewTextBoxColumn,
+            this.endCardDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn1,
+            this.clubCardDelete});
+            this.dgvClubCard.DataSource = this.clubCardBindingSource;
+            this.dgvClubCard.Location = new System.Drawing.Point(28, 38);
+            this.dgvClubCard.Name = "dgvClubCard";
+            this.dgvClubCard.ReadOnly = true;
+            this.dgvClubCard.Size = new System.Drawing.Size(728, 468);
+            this.dgvClubCard.TabIndex = 0;
+            this.dgvClubCard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClubCard_CellContentClick);
+            this.dgvClubCard.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
+            // 
+            // clubCardBindingSource
+            // 
+            this.clubCardBindingSource.DataSource = typeof(oodb.Classes.ClubCard);
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Клиент";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            this.clientDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serviceDataGridViewTextBoxColumn
+            // 
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "Услуга";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            this.serviceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // startCardDataGridViewTextBoxColumn
+            // 
+            this.startCardDataGridViewTextBoxColumn.DataPropertyName = "startCard";
+            this.startCardDataGridViewTextBoxColumn.HeaderText = "Старт карты";
+            this.startCardDataGridViewTextBoxColumn.Name = "startCardDataGridViewTextBoxColumn";
+            this.startCardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // endCardDataGridViewTextBoxColumn
+            // 
+            this.endCardDataGridViewTextBoxColumn.DataPropertyName = "endCard";
+            this.endCardDataGridViewTextBoxColumn.HeaderText = "Конец карты";
+            this.endCardDataGridViewTextBoxColumn.Name = "endCardDataGridViewTextBoxColumn";
+            this.endCardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Цена абонемента";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // clubCardDelete
+            // 
+            this.clubCardDelete.HeaderText = "Удаление";
+            this.clubCardDelete.Name = "clubCardDelete";
+            this.clubCardDelete.ReadOnly = true;
+            this.clubCardDelete.Text = "Удалить";
+            this.clubCardDelete.UseColumnTextForButtonValue = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,6 +676,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -628,6 +732,16 @@
         private System.Windows.Forms.TextBox txtClientLastName;
         private System.Windows.Forms.TextBox txtClientSecondName;
         private System.Windows.Forms.TextBox txtClientName;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dgvClubCard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startCardDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endCardDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn clubCardDelete;
+        private System.Windows.Forms.BindingSource clubCardBindingSource;
     }
 }
 
