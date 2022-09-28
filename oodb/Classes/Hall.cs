@@ -25,5 +25,12 @@ namespace oodb.Classes
             id = Guid.NewGuid().ToString();
             this.title = title;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Hall hall &&
+                   id == hall.id &&
+                   title == hall.title;
+        }
     }
 }

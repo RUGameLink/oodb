@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace oodb.Classes
@@ -41,6 +42,55 @@ namespace oodb.Classes
             found.title = service.title;
             db.Store(found);
         }
-        #endregion 
+        #endregion
+        #region Работа с залами
+        public void AddHall(Hall hall)
+        {
+            db.Store(hall);
+        }
+        public void DeleteHall(string id)
+        {
+            var found = db.Query<Hall>(hl => id == hl.id)[0];
+            db.Delete(found);
+        }
+        public List<Hall> GetHall()
+        {
+            var list = db.Query<Hall>().ToList();
+            return list;
+        }
+        public void UpdateHall(Hall hall)
+        {
+            var found = db.Query<Hall>(hl => hl.id == hall.id)[0];
+            found.title = hall.title;
+            db.Store(found);
+        }
+        #endregion
+        #region работа с клиентами
+        public void AddClient(Client client)
+        {
+            db.Store(client);
+        }
+        public List<Client> GetClient()
+        {
+            return db.Query<Client>().ToList();
+        }
+
+        public void DeleteClient(string id)
+        {
+            var found = db.Query<Client>(clt => clt.id == id)[0];
+            db.Delete(found);
+        }
+        
+        public void UpdateClient(Client client)
+        {
+            var found = db.Query<Client>(clt => clt.id == client.id)[0];
+            found.phone = client.phone;
+            found.adress = client.adress;
+            found.surname = client.surname;
+            found.name = client.name;
+            found.patronymic = client.patronymic;
+            db.Store(found);
+        }
+        #endregion
     }
 }

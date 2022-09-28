@@ -28,5 +28,13 @@ namespace oodb.Classes
             this.title = title;
             this.price = price;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Service service &&
+                   id == service.id &&
+                   title == service.title &&
+                   price == service.price;
+        }
     }
 }

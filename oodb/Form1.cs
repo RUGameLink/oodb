@@ -7,8 +7,10 @@ using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Db4objects.Db4o.Internal.Metadata.HierarchyAnalyzer;
 
 namespace oodb
 {
@@ -23,10 +25,6 @@ namespace oodb
             InitializeComponent();
             dataBase = new DataBase();
             dataBase.dbConnect();
-            var service = new Service();
-            service.title = "Service" + random.Next(0, 10000);
-            service.price = random.Next(100, 1000);
-            dataBase.AddService(service);
             bindingSourceSetting();
         }
         void bindingSourceSetting()
@@ -34,6 +32,14 @@ namespace oodb
             foreach (var s in dataBase.GetService())
             {
                 serviceBindingSource.Add(s);
+            }
+            foreach(var h in dataBase.GetHall())
+            {
+                hallBindingSource.Add(h);
+            }
+            foreach(var c in dataBase.GetClient())
+            {
+                clientBindingSource.Add(c);
             }
         }
         #endregion
@@ -116,7 +122,6 @@ namespace oodb
             selectedService.id = dgvService.Rows[e.RowIndex].Cells[0].Value.ToString();
             selectedService.title = dgvService.Rows[e.RowIndex].Cells[1].Value.ToString();
             selectedService.price = (int)dgvService.Rows[e.RowIndex].Cells[2].Value;
-            Console.WriteLine();
         }
 
         private void dgvService_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -130,6 +135,10 @@ namespace oodb
             service.id = dgvService.Rows[e.RowIndex].Cells[0].Value.ToString();
             service.title = dgvService.Rows[e.RowIndex].Cells[1].Value.ToString();
             service.price = (int)dgvService.Rows[e.RowIndex].Cells[2].Value;
+            if (service.Equals(selectedService))
+            {
+                return;
+            }
             var dialogResult = messageBoxClickResult("Изменить эту запись?");
             if (dialogResult == DialogResult.No)
             {
@@ -165,5 +174,270 @@ namespace oodb
             messageBoxSuccessAdd();
         }
         #endregion
+        #region работа с залами
+
+        private void dgvHall_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (dgvHall.Columns[e.ColumnIndex].Index == dgvHall.Columns.Count - 1)
+            {
+                if (messageBoxClickResult("Удалить эту запись?") == DialogResult.Yes)
+                {
+                    var id = dgvHall.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    hallBindingSource.RemoveAt(e.RowIndex);
+                    dataBase.DeleteHall(id);
+                }
+            }
+        }
+
+        private void btnHallAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtHallTitle.Text))
+            {
+                messageBoxError("Вы не ввели название");
+                return;
+            }
+            var hall = new Hall();
+            hall.title = txtHallTitle.Text;
+            dataBase.AddHall(hall);
+            hallBindingSource.Add(hall);
+            txtHallTitle.Clear();
+            messageBoxSuccessAdd();
+        }
+
+        private void cbHallIsEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbHallIsEdit.Checked)
+            {
+                dgvHall.Columns[1].ReadOnly = false;
+                dgvHall.Columns[2].Visible = true;
+            }
+            else
+            {
+                dgvHall.Columns[1].ReadOnly = true;
+                dgvHall.Columns[2].Visible = false;
+            }
+        }
+
+        private void dgvHall_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var hall = new Hall();
+            hall.id = dgvHall.Rows[e.RowIndex].Cells[0].Value.ToString();
+            hall.title = dgvHall.Rows[e.RowIndex].Cells[1].Value.ToString();
+            if (hall.Equals(selectedHall))
+            {
+                return;
+            }
+            var dialogResult = messageBoxClickResult("Изменить эту запись?");
+            if (dialogResult == DialogResult.No)
+            {
+                dgvHall.Rows[e.RowIndex].Cells[1].Value = selectedHall.title;
+                return;
+            }
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                dataBase.UpdateHall(dgvHall.CurrentRow.DataBoundItem as Hall);
+            }
+        }
+        Hall selectedHall;
+        private void dgvHall_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            selectedHall = new Hall();
+            selectedHall.id = dgvHall.Rows[e.RowIndex].Cells[0].Value.ToString();
+            selectedHall.title = dgvHall.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+        #endregion
+        private void cbClientIsEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbClientIsEdit.Checked == true)
+            {
+                dgvClient.Columns[1].ReadOnly = false;
+                dgvClient.Columns[2].ReadOnly = false;
+                dgvClient.Columns[3].ReadOnly = false;
+                dgvClient.Columns[4].ReadOnly = false;
+                dgvClient.Columns[5].ReadOnly = false;
+                dgvClient.Columns[6].Visible = true;
+            }
+            else
+            {
+                dgvClient.Columns[1].ReadOnly = true;
+                dgvClient.Columns[2].ReadOnly = true;
+                dgvClient.Columns[3].ReadOnly = true;
+                dgvClient.Columns[4].ReadOnly = true;
+                dgvClient.Columns[5].ReadOnly = true;
+                dgvClient.Columns[6].Visible = false;
+            }
+        }
+
+        private void dgvClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (dgvClient.Columns[e.ColumnIndex].Index == dgvClient.Columns.Count - 1)
+            {
+                if (messageBoxClickResult("Удалить эту запись?") == DialogResult.Yes)
+                {
+                    var id = dgvClient.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    clientBindingSource.RemoveAt(e.RowIndex);
+                    dataBase.DeleteClient(id);
+                }
+            }
+        }
+
+        private void btnClientAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtClientName.Text))
+            {
+                messageBoxError("Вы не ввели имя");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtClientSecondName.Text))
+            {
+                messageBoxError("Вы не ввели отчество");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtClientLastName.Text))
+            {
+                messageBoxError("Вы не ввели фамилию");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtClientAddress.Text))
+            {
+                messageBoxError("Вы не ввели адрес");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtClientPhone.Text))
+            {
+                messageBoxError("Вы не ввели телефон");
+                return;
+            }
+            Regex phoneRegex = new Regex(@"^[+]{0,1}[7-8]{1}[(]9{1}\d{2}[)]\d{3}[-]\d{2}[-]\d{2}$");
+            MatchCollection matches = phoneRegex.Matches(txtClientPhone.Text);
+            if (matches.Count == 0)
+            {
+                messageBoxError("Не верный формат телефона");
+                return;
+            }
+            var client = new Client();
+            client.adress = txtClientAddress.Text;
+            client.surname = txtClientLastName.Text;
+            client.phone = txtClientPhone.Text;
+            client.patronymic = txtClientSecondName.Text;
+            client.name = txtClientName.Text;
+            dataBase.AddClient(client);
+            clientBindingSource.Add(client);
+            txtClientAddress.Clear();
+            txtClientLastName.Clear();
+            txtClientPhone.Clear();
+            txtClientSecondName.Clear();
+            txtClientName.Clear();
+            messageBoxSuccessAdd();
+        }
+
+        private void txtClientPhone_TextChanged(object sender, EventArgs e)
+        {
+            //Добавление первой скобки
+            if (txtClientPhone.Text.Length == 1 && (txtClientPhone.Text[0] != '+'))
+            {
+                txtClientPhone.Text += "(9";
+                txtClientPhone.SelectionStart = 3;
+            }
+            else if (txtClientPhone.Text.Length == 2 && txtClientPhone.Text[1] == '7')
+            {
+                txtClientPhone.Text += "(9";
+                txtClientPhone.SelectionStart = 4;
+            }
+            //Добавление второй скобки
+            if (txtClientPhone.Text.Length == 5 && (txtClientPhone.Text[0] != '+'))
+            {
+                txtClientPhone.Text += ")";
+                txtClientPhone.SelectionStart = 6;
+            }
+            else if (txtClientPhone.Text.Length == 6 && txtClientPhone.Text[0] == '+')
+            {
+                txtClientPhone.Text += ")";
+                txtClientPhone.SelectionStart = 7;
+            }
+            //Добавление -
+            if (txtClientPhone.Text.Length == 9 && (txtClientPhone.Text[0] != '+'))
+            {
+                txtClientPhone.Text += "-";
+                txtClientPhone.SelectionStart = 10;
+            }
+            else if (txtClientPhone.Text.Length == 10 && txtClientPhone.Text[0] == '+')
+            {
+                txtClientPhone.Text += "-";
+                txtClientPhone.SelectionStart = 11;
+            }
+            //Добавление -
+            if (txtClientPhone.Text.Length == 12 && (txtClientPhone.Text[0] != '+'))
+            {
+                txtClientPhone.Text += "-";
+                txtClientPhone.SelectionStart = 13;
+            }
+            else if (txtClientPhone.Text.Length == 13 && txtClientPhone.Text[0] == '+')
+            {
+                txtClientPhone.Text += "-";
+                txtClientPhone.SelectionStart = 14;
+            }
+        }
+
+        Client selectedClient;
+        private void dgvClient_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            selectedClient = new Client();
+            selectedClient.id = dgvClient.Rows[e.RowIndex].Cells[0].Value.ToString();
+            selectedClient.adress = dgvClient.Rows[e.RowIndex].Cells[1].Value.ToString();
+            selectedClient.phone = dgvClient.Rows[e.RowIndex].Cells[2].Value.ToString();
+            selectedClient.name = dgvClient.Rows[e.RowIndex].Cells[3].Value.ToString();
+            selectedClient.patronymic = dgvClient.Rows[e.RowIndex].Cells[4].Value.ToString();
+            selectedClient.surname = dgvClient.Rows[e.RowIndex].Cells[5].Value.ToString();
+        }
+
+        private void dgvClient_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var client = new Client();
+            client.id = dgvClient.Rows[e.RowIndex].Cells[0].Value.ToString();
+            client.adress = dgvClient.Rows[e.RowIndex].Cells[1].Value.ToString();
+            client.phone = dgvClient.Rows[e.RowIndex].Cells[2].Value.ToString();
+            client.name = dgvClient.Rows[e.RowIndex].Cells[3].Value.ToString();
+            client.patronymic = dgvClient.Rows[e.RowIndex].Cells[4].Value.ToString();
+            client.surname = dgvClient.Rows[e.RowIndex].Cells[5].Value.ToString();
+            if (selectedClient.Equals(client))
+            {
+                return;
+            }
+            if (selectedClient.phone != client.phone)
+            {
+                Regex phoneRegex = new Regex(@"^[+]{0,1}[7-8]{1}[(]9{1}\d{2}[)]\d{3}[-]\d{2}[-]\d{2}$");
+                MatchCollection matches = phoneRegex.Matches(client.phone);
+                if (matches.Count == 0)
+                {
+                    messageBoxError("Не верный формат телефона");
+                    dgvClient[2, e.RowIndex].Value = selectedClient.phone;
+                    return;
+                }
+            }
+            var dialogResult = messageBoxClickResult("Изменить эту запись?");
+            if (dialogResult == DialogResult.No)
+            {
+                dgvClient[1, e.RowIndex].Value = selectedClient.adress;
+                dgvClient[2, e.RowIndex].Value = selectedClient.phone;
+                dgvClient[3, e.RowIndex].Value = selectedClient.name;
+                dgvClient[4, e.RowIndex].Value = selectedClient.patronymic;
+                dgvClient[5, e.RowIndex].Value = selectedClient.surname;
+                return;
+            }
+            if (dialogResult == DialogResult.Yes)
+            {
+                dataBase.UpdateClient(dgvClient.CurrentRow.DataBoundItem as Client);
+            }
+        }
     }
 }
