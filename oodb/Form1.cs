@@ -41,6 +41,10 @@ namespace oodb
             {
                 clientBindingSource.Add(c);
             }
+            foreach(var cc in dataBase.GetClubCard())
+            {
+                clubCardBindingSource.Add(cc);
+            }
         }
         #endregion
         #region Утилиты
@@ -441,6 +445,7 @@ namespace oodb
             }
         }
         #endregion
+        #region Работа с абониментом
         private void dgvClubCard_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -457,5 +462,40 @@ namespace oodb
                 }
             }
         }
+
+        private void cbIsClubCardEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbIsClubCardEdit.Checked)
+            {
+                dgvClubCard.Columns[6].Visible = true;
+            }
+            else
+            {
+                dgvClubCard.Columns[6].Visible = false;
+            }
+        }
+
+        private void btnClubCardAdd_Click(object sender, EventArgs e)
+        {
+            var dateStart = dtpClubCardStart.Value;
+            var dateEnd = dtpClubCardEnd.Value;
+            if (dateStart.Day == dateEnd.Day 
+                && dateStart.Month == dateEnd.Month
+                && dateStart.Year == dateEnd.Year)
+            {
+                messageBoxError("Не верные даты");
+                return;
+            }
+            var clubCard = new ClubCard();
+            clubCard.price = (int)nudClubCardPrice.Value;
+            clubCard.client = cmbClubCardClient.SelectedItem as Client;
+            clubCard.startCard = dateStart;
+            clubCard.endCard = dateEnd;
+            clubCard.service = cmbClubCardService.SelectedItem as Service;
+            dataBase.AddClubCard(clubCard);
+            clubCardBindingSource.Add(clubCard);
+            messageBoxSuccessAdd();
+        }
+        #endregion
     }
 }

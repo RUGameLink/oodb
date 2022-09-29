@@ -52,5 +52,10 @@ namespace oodb.Classes
                    surname == client.surname &&
                    patronymic == client.patronymic;
         }
+
+        public override string ToString()
+        {
+            return surname;
+        }
     }
 }

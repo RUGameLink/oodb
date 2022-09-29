@@ -36,5 +36,10 @@ namespace oodb.Classes
                    title == service.title &&
                    price == service.price;
         }
+
+        public override string ToString()
+        {
+            return title;
+        }
     }
 }

@@ -39,46 +39,57 @@
             this.txtServiceTitle = new System.Windows.Forms.TextBox();
             this.cbIsServiceEdit = new System.Windows.Forms.CheckBox();
             this.dgvService = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbHallIsEdit = new System.Windows.Forms.CheckBox();
             this.btnHallAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHallTitle = new System.Windows.Forms.TextBox();
             this.dgvHall = new System.Windows.Forms.DataGridView();
-            this.hallDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvClient = new System.Windows.Forms.DataGridView();
-            this.cbClientIsEdit = new System.Windows.Forms.CheckBox();
-            this.gdvCliet = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.txtClientName = new System.Windows.Forms.TextBox();
-            this.txtClientSecondName = new System.Windows.Forms.TextBox();
-            this.txtClientLastName = new System.Windows.Forms.TextBox();
-            this.txtClientAddress = new System.Windows.Forms.TextBox();
-            this.txtClientPhone = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnClientAdd = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hallDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.hallBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnClientAdd = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtClientPhone = new System.Windows.Forms.TextBox();
+            this.txtClientAddress = new System.Windows.Forms.TextBox();
+            this.txtClientLastName = new System.Windows.Forms.TextBox();
+            this.txtClientSecondName = new System.Windows.Forms.TextBox();
+            this.txtClientName = new System.Windows.Forms.TextBox();
+            this.cbClientIsEdit = new System.Windows.Forms.CheckBox();
+            this.dgvClient = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patronymicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvCliet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnClubCardAdd = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.nudClubCardPrice = new System.Windows.Forms.NumericUpDown();
+            this.dtpClubCardEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpClubCardStart = new System.Windows.Forms.DateTimePicker();
+            this.cmbClubCardService = new System.Windows.Forms.ComboBox();
+            this.cmbClubCardClient = new System.Windows.Forms.ComboBox();
+            this.cbIsClubCardEdit = new System.Windows.Forms.CheckBox();
             this.dgvClubCard = new System.Windows.Forms.DataGridView();
-            this.clubCardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,19 +97,21 @@
             this.endCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clubCardDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clubCardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServicePrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudClubCardPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -231,6 +244,28 @@
             this.dgvService.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
             this.dgvService.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvService_DataError);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Название услуги";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // serviceDelete
             // 
             this.serviceDelete.HeaderText = "Удаление";
@@ -238,6 +273,10 @@
             this.serviceDelete.Text = "Удалить";
             this.serviceDelete.UseColumnTextForButtonValue = true;
             this.serviceDelete.Visible = false;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(oodb.Classes.Service);
             // 
             // tabPage2
             // 
@@ -310,6 +349,21 @@
             this.dgvHall.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHall_CellEndEdit);
             this.dgvHall.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
             // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn1
+            // 
+            this.titleDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn1.HeaderText = "Зал";
+            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
+            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // hallDelete
             // 
             this.hallDelete.HeaderText = "Удаление";
@@ -317,6 +371,10 @@
             this.hallDelete.Text = "Удалить";
             this.hallDelete.UseColumnTextForButtonValue = true;
             this.hallDelete.Visible = false;
+            // 
+            // hallBindingSource
+            // 
+            this.hallBindingSource.DataSource = typeof(oodb.Classes.Hall);
             // 
             // tabPage3
             // 
@@ -340,6 +398,108 @@
             this.tabPage3.Text = "Клиент";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnClientAdd
+            // 
+            this.btnClientAdd.Location = new System.Drawing.Point(837, 386);
+            this.btnClientAdd.Name = "btnClientAdd";
+            this.btnClientAdd.Size = new System.Drawing.Size(106, 48);
+            this.btnClientAdd.TabIndex = 12;
+            this.btnClientAdd.Text = "Добавить";
+            this.btnClientAdd.UseVisualStyleBackColor = true;
+            this.btnClientAdd.Click += new System.EventHandler(this.btnClientAdd_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(864, 316);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Телефон";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(871, 257);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Адрес";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(862, 193);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Фамилия";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(863, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Отчество";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(876, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Имя";
+            // 
+            // txtClientPhone
+            // 
+            this.txtClientPhone.Location = new System.Drawing.Point(813, 332);
+            this.txtClientPhone.Name = "txtClientPhone";
+            this.txtClientPhone.Size = new System.Drawing.Size(155, 20);
+            this.txtClientPhone.TabIndex = 6;
+            this.txtClientPhone.TextChanged += new System.EventHandler(this.txtClientPhone_TextChanged);
+            // 
+            // txtClientAddress
+            // 
+            this.txtClientAddress.Location = new System.Drawing.Point(813, 273);
+            this.txtClientAddress.Name = "txtClientAddress";
+            this.txtClientAddress.Size = new System.Drawing.Size(155, 20);
+            this.txtClientAddress.TabIndex = 5;
+            // 
+            // txtClientLastName
+            // 
+            this.txtClientLastName.Location = new System.Drawing.Point(813, 209);
+            this.txtClientLastName.Name = "txtClientLastName";
+            this.txtClientLastName.Size = new System.Drawing.Size(155, 20);
+            this.txtClientLastName.TabIndex = 4;
+            // 
+            // txtClientSecondName
+            // 
+            this.txtClientSecondName.Location = new System.Drawing.Point(813, 148);
+            this.txtClientSecondName.Name = "txtClientSecondName";
+            this.txtClientSecondName.Size = new System.Drawing.Size(155, 20);
+            this.txtClientSecondName.TabIndex = 3;
+            // 
+            // txtClientName
+            // 
+            this.txtClientName.Location = new System.Drawing.Point(813, 89);
+            this.txtClientName.Name = "txtClientName";
+            this.txtClientName.Size = new System.Drawing.Size(155, 20);
+            this.txtClientName.TabIndex = 2;
+            // 
+            // cbClientIsEdit
+            // 
+            this.cbClientIsEdit.AutoSize = true;
+            this.cbClientIsEdit.Location = new System.Drawing.Point(807, 29);
+            this.cbClientIsEdit.Name = "cbClientIsEdit";
+            this.cbClientIsEdit.Size = new System.Drawing.Size(161, 17);
+            this.cbClientIsEdit.TabIndex = 1;
+            this.cbClientIsEdit.Text = "Включить редактирование";
+            this.cbClientIsEdit.UseVisualStyleBackColor = true;
+            this.cbClientIsEdit.CheckedChanged += new System.EventHandler(this.cbClientIsEdit_CheckedChanged);
+            // 
             // dgvClient
             // 
             this.dgvClient.AllowUserToAddRows = false;
@@ -362,161 +522,6 @@
             this.dgvClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClient_CellContentClick);
             this.dgvClient.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClient_CellEndEdit);
             this.dgvClient.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
-            // 
-            // cbClientIsEdit
-            // 
-            this.cbClientIsEdit.AutoSize = true;
-            this.cbClientIsEdit.Location = new System.Drawing.Point(807, 29);
-            this.cbClientIsEdit.Name = "cbClientIsEdit";
-            this.cbClientIsEdit.Size = new System.Drawing.Size(161, 17);
-            this.cbClientIsEdit.TabIndex = 1;
-            this.cbClientIsEdit.Text = "Включить редактирование";
-            this.cbClientIsEdit.UseVisualStyleBackColor = true;
-            this.cbClientIsEdit.CheckedChanged += new System.EventHandler(this.cbClientIsEdit_CheckedChanged);
-            // 
-            // gdvCliet
-            // 
-            this.gdvCliet.HeaderText = "Удаление";
-            this.gdvCliet.Name = "gdvCliet";
-            this.gdvCliet.Text = "Удалить";
-            this.gdvCliet.UseColumnTextForButtonValue = true;
-            this.gdvCliet.Visible = false;
-            // 
-            // txtClientName
-            // 
-            this.txtClientName.Location = new System.Drawing.Point(813, 89);
-            this.txtClientName.Name = "txtClientName";
-            this.txtClientName.Size = new System.Drawing.Size(155, 20);
-            this.txtClientName.TabIndex = 2;
-            // 
-            // txtClientSecondName
-            // 
-            this.txtClientSecondName.Location = new System.Drawing.Point(813, 148);
-            this.txtClientSecondName.Name = "txtClientSecondName";
-            this.txtClientSecondName.Size = new System.Drawing.Size(155, 20);
-            this.txtClientSecondName.TabIndex = 3;
-            // 
-            // txtClientLastName
-            // 
-            this.txtClientLastName.Location = new System.Drawing.Point(813, 209);
-            this.txtClientLastName.Name = "txtClientLastName";
-            this.txtClientLastName.Size = new System.Drawing.Size(155, 20);
-            this.txtClientLastName.TabIndex = 4;
-            // 
-            // txtClientAddress
-            // 
-            this.txtClientAddress.Location = new System.Drawing.Point(813, 273);
-            this.txtClientAddress.Name = "txtClientAddress";
-            this.txtClientAddress.Size = new System.Drawing.Size(155, 20);
-            this.txtClientAddress.TabIndex = 5;
-            // 
-            // txtClientPhone
-            // 
-            this.txtClientPhone.Location = new System.Drawing.Point(813, 332);
-            this.txtClientPhone.Name = "txtClientPhone";
-            this.txtClientPhone.Size = new System.Drawing.Size(155, 20);
-            this.txtClientPhone.TabIndex = 6;
-            this.txtClientPhone.TextChanged += new System.EventHandler(this.txtClientPhone_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(876, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Имя";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(863, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Отчество";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(862, 193);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Фамилия";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(871, 257);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Адрес";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(864, 316);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Телефон";
-            // 
-            // btnClientAdd
-            // 
-            this.btnClientAdd.Location = new System.Drawing.Point(837, 386);
-            this.btnClientAdd.Name = "btnClientAdd";
-            this.btnClientAdd.Size = new System.Drawing.Size(106, 48);
-            this.btnClientAdd.TabIndex = 12;
-            this.btnClientAdd.Text = "Добавить";
-            this.btnClientAdd.UseVisualStyleBackColor = true;
-            this.btnClientAdd.Click += new System.EventHandler(this.btnClientAdd_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Название услуги";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // serviceBindingSource
-            // 
-            this.serviceBindingSource.DataSource = typeof(oodb.Classes.Service);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn1
-            // 
-            this.titleDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn1.HeaderText = "Зал";
-            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // hallBindingSource
-            // 
-            this.hallBindingSource.DataSource = typeof(oodb.Classes.Hall);
             // 
             // idDataGridViewTextBoxColumn2
             // 
@@ -561,12 +566,32 @@
             this.patronymicDataGridViewTextBoxColumn.Name = "patronymicDataGridViewTextBoxColumn";
             this.patronymicDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // gdvCliet
+            // 
+            this.gdvCliet.HeaderText = "Удаление";
+            this.gdvCliet.Name = "gdvCliet";
+            this.gdvCliet.Text = "Удалить";
+            this.gdvCliet.UseColumnTextForButtonValue = true;
+            this.gdvCliet.Visible = false;
+            // 
             // clientBindingSource
             // 
             this.clientBindingSource.DataSource = typeof(oodb.Classes.Client);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnClubCardAdd);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.nudClubCardPrice);
+            this.tabPage4.Controls.Add(this.dtpClubCardEnd);
+            this.tabPage4.Controls.Add(this.dtpClubCardStart);
+            this.tabPage4.Controls.Add(this.cmbClubCardService);
+            this.tabPage4.Controls.Add(this.cmbClubCardClient);
+            this.tabPage4.Controls.Add(this.cbIsClubCardEdit);
             this.tabPage4.Controls.Add(this.dgvClubCard);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -574,6 +599,130 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Абонименты";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnClubCardAdd
+            // 
+            this.btnClubCardAdd.Location = new System.Drawing.Point(855, 359);
+            this.btnClubCardAdd.Name = "btnClubCardAdd";
+            this.btnClubCardAdd.Size = new System.Drawing.Size(91, 39);
+            this.btnClubCardAdd.TabIndex = 12;
+            this.btnClubCardAdd.Text = "Добавить";
+            this.btnClubCardAdd.UseVisualStyleBackColor = true;
+            this.btnClubCardAdd.Click += new System.EventHandler(this.btnClubCardAdd_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(869, 298);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(62, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Стоимость";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(867, 245);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Дата конца";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(865, 192);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Дата начала";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(879, 138);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Услуга";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(879, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Клиент";
+            // 
+            // nudClubCardPrice
+            // 
+            this.nudClubCardPrice.Location = new System.Drawing.Point(831, 321);
+            this.nudClubCardPrice.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudClubCardPrice.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudClubCardPrice.Name = "nudClubCardPrice";
+            this.nudClubCardPrice.Size = new System.Drawing.Size(139, 20);
+            this.nudClubCardPrice.TabIndex = 6;
+            this.nudClubCardPrice.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dtpClubCardEnd
+            // 
+            this.dtpClubCardEnd.Location = new System.Drawing.Point(831, 268);
+            this.dtpClubCardEnd.Name = "dtpClubCardEnd";
+            this.dtpClubCardEnd.Size = new System.Drawing.Size(139, 20);
+            this.dtpClubCardEnd.TabIndex = 5;
+            // 
+            // dtpClubCardStart
+            // 
+            this.dtpClubCardStart.Location = new System.Drawing.Point(831, 215);
+            this.dtpClubCardStart.Name = "dtpClubCardStart";
+            this.dtpClubCardStart.Size = new System.Drawing.Size(139, 20);
+            this.dtpClubCardStart.TabIndex = 4;
+            // 
+            // cmbClubCardService
+            // 
+            this.cmbClubCardService.DataSource = this.serviceBindingSource;
+            this.cmbClubCardService.DisplayMember = "title";
+            this.cmbClubCardService.FormattingEnabled = true;
+            this.cmbClubCardService.Location = new System.Drawing.Point(831, 161);
+            this.cmbClubCardService.Name = "cmbClubCardService";
+            this.cmbClubCardService.Size = new System.Drawing.Size(139, 21);
+            this.cmbClubCardService.TabIndex = 3;
+            this.cmbClubCardService.ValueMember = "id";
+            // 
+            // cmbClubCardClient
+            // 
+            this.cmbClubCardClient.DataSource = this.clientBindingSource;
+            this.cmbClubCardClient.DisplayMember = "surname";
+            this.cmbClubCardClient.FormattingEnabled = true;
+            this.cmbClubCardClient.Location = new System.Drawing.Point(831, 107);
+            this.cmbClubCardClient.Name = "cmbClubCardClient";
+            this.cmbClubCardClient.Size = new System.Drawing.Size(139, 21);
+            this.cmbClubCardClient.TabIndex = 2;
+            this.cmbClubCardClient.ValueMember = "id";
+            // 
+            // cbIsClubCardEdit
+            // 
+            this.cbIsClubCardEdit.AutoSize = true;
+            this.cbIsClubCardEdit.Location = new System.Drawing.Point(847, 53);
+            this.cbIsClubCardEdit.Name = "cbIsClubCardEdit";
+            this.cbIsClubCardEdit.Size = new System.Drawing.Size(125, 17);
+            this.cbIsClubCardEdit.TabIndex = 1;
+            this.cbIsClubCardEdit.Text = "Включить удаление";
+            this.cbIsClubCardEdit.UseVisualStyleBackColor = true;
+            this.cbIsClubCardEdit.CheckedChanged += new System.EventHandler(this.cbIsClubCardEdit_CheckedChanged);
             // 
             // dgvClubCard
             // 
@@ -596,10 +745,6 @@
             this.dgvClubCard.TabIndex = 0;
             this.dgvClubCard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClubCard_CellContentClick);
             this.dgvClubCard.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
-            // 
-            // clubCardBindingSource
-            // 
-            this.clubCardBindingSource.DataSource = typeof(oodb.Classes.ClubCard);
             // 
             // idDataGridViewTextBoxColumn3
             // 
@@ -651,6 +796,11 @@
             this.clubCardDelete.ReadOnly = true;
             this.clubCardDelete.Text = "Удалить";
             this.clubCardDelete.UseColumnTextForButtonValue = true;
+            this.clubCardDelete.Visible = false;
+            // 
+            // clubCardBindingSource
+            // 
+            this.clubCardBindingSource.DataSource = typeof(oodb.Classes.ClubCard);
             // 
             // Form1
             // 
@@ -667,16 +817,18 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServicePrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudClubCardPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -734,6 +886,8 @@
         private System.Windows.Forms.TextBox txtClientName;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvClubCard;
+        private System.Windows.Forms.BindingSource clubCardBindingSource;
+        private System.Windows.Forms.CheckBox cbIsClubCardEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
@@ -741,7 +895,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn endCardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn clubCardDelete;
-        private System.Windows.Forms.BindingSource clubCardBindingSource;
+        private System.Windows.Forms.ComboBox cmbClubCardService;
+        private System.Windows.Forms.ComboBox cmbClubCardClient;
+        private System.Windows.Forms.DateTimePicker dtpClubCardStart;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown nudClubCardPrice;
+        private System.Windows.Forms.DateTimePicker dtpClubCardEnd;
+        private System.Windows.Forms.Button btnClubCardAdd;
     }
 }
 

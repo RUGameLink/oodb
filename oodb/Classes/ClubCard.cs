@@ -19,10 +19,10 @@ namespace oodb.Classes
         public Service service { get; set; }
 
         [DisplayName("Старт карты")]
-        public string startCard { get; set; }
+        public DateTime startCard { get; set; }
 
         [DisplayName("Конец карты")]
-        public string endCard { get; set; }
+        public DateTime endCard { get; set; }
 
         [DisplayName("Цена абонемента")]
         public int price { get; set; }
@@ -32,7 +32,7 @@ namespace oodb.Classes
             id = Guid.NewGuid().ToString();
         }
 
-        public ClubCard(Client client, Service service, string startCard, string endCard, int price)
+        public ClubCard(Client client, Service service, DateTime startCard, DateTime endCard, int price)
         {
             id = Guid.NewGuid().ToString();
             this.client = client;
