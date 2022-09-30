@@ -32,5 +32,10 @@ namespace oodb.Classes
                    id == hall.id &&
                    title == hall.title;
         }
+
+        public override string ToString()
+        {
+            return title;
+        }
     }
 }

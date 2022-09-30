@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -18,6 +19,7 @@ namespace oodb
     /// Мысли в слух
     /// Поиск абониментов, чьи абонименты заканчиваются или закончились 
     /// Нельзя оставлять пустой ячейку в сотруднике(понятия не имею почему)
+    /// Реализовать проверку занятия в дату, тренера и зал
     /// </summary>
     public partial class Form1 : Form
     {
@@ -31,6 +33,13 @@ namespace oodb
             dataBase = new DataBase();
             dataBase.dbConnect();
             bindingSourceSetting();
+            cmbTaskTableDuraction.SelectedIndex = 0;
+            dtpClubCardStart.MinDate = DateTime.Now;
+            dtpClubCardEnd.MinDate = DateTime.Now.AddDays(1);
+            dtpTaskTableDate.Format = DateTimePickerFormat.Custom;
+            dtpTaskTableDate.CustomFormat = "MM/dd/yyyy HH:mm";
+            dtpTaskTableDate.MinDate = DateTime.Now;
+
         }
         void bindingSourceSetting()
         {
@@ -53,6 +62,10 @@ namespace oodb
             foreach (var staff in dataBase.GetStaff())
             {
                 staffBindingSource.Add(staff);
+            }
+            foreach(var tt in dataBase.GetTaskTable())
+            {
+                taskTableBindingSource.Add(tt);
             }
         }
         #endregion
@@ -506,7 +519,7 @@ namespace oodb
             messageBoxSuccessAdd();
         }
         #endregion
-
+        #region Работа с сотрудником
         private void dgvStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -695,5 +708,50 @@ namespace oodb
                 dataBase.UpdateStaff(dgvStaff.CurrentRow.DataBoundItem as Staff);
             }
         }
+        #endregion
+
+        #region Работа с расписанием
+        private void btnTaskTabkeAdd_Click(object sender, EventArgs e)
+        {
+            var tt = new TaskTable();
+            tt.staff = cmbTaskTableStaff.SelectedItem as Staff;
+            tt.client = cmbTaskTableClient.SelectedItem as Client;
+            tt.dateLesson = dtpTaskTableDate.Value;
+            tt.duration = int.Parse(cmbTaskTableDuraction.Text);
+            tt.hall = cmbTaskTableHall.SelectedItem as Hall;
+            dataBase.AddTaskTable(tt);
+            taskTableBindingSource.Add(tt);
+            messageBoxSuccessAdd();
+        }
+
+        private void cbIsTaskTableEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbIsTaskTableEdit.Checked)
+            {
+                dgvTaskTable.Columns[6].Visible = true;
+            }
+            else
+            {
+                dgvTaskTable.Columns[6].Visible = false;
+            }
+        }
+
+        private void dgvTaskTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (dgvTaskTable.Columns[e.ColumnIndex].Index == dgvTaskTable.Columns.Count - 1)
+            {
+                if (messageBoxClickResult("Удалить эту запись?") == DialogResult.Yes)
+                {
+                    var id = dgvTaskTable.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    taskTableBindingSource.RemoveAt(e.RowIndex);
+                    dataBase.DeleteTaskTable(id);
+                }
+            }
+        }
+        #endregion
     }
 }

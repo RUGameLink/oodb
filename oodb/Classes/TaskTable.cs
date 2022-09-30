@@ -22,7 +22,7 @@ namespace oodb.Classes
         public Client client { get; set; }
 
         [DisplayName("Дата занятия")]
-        public string dateLesson { get; set; }
+        public DateTime dateLesson { get; set; }
 
         [DisplayName("Продолжительность занятия")]
         public int duration { get; set; }
@@ -32,7 +32,7 @@ namespace oodb.Classes
             id = Guid.NewGuid().ToString();
         }
 
-        public TaskTable(Staff staff, Hall hall, Client client, string dateLesson, int duration)
+        public TaskTable(Staff staff, Hall hall, Client client, DateTime dateLesson, int duration)
         {
             id = Guid.NewGuid().ToString();
             this.staff = staff;

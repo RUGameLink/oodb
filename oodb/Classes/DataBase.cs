@@ -130,5 +130,17 @@ namespace oodb.Classes
             db.Store(found);
         }
         #endregion
+        #region
+        public void AddTaskTable(TaskTable taskTable)
+        {
+            db.Store(taskTable);
+        }
+        public void DeleteTaskTable(string id)
+        {
+            var found = db.Query<TaskTable>(tt => tt.id == id)[0];
+            db.Delete(found);
+        }
+        public List<TaskTable> GetTaskTable() => db.Query<TaskTable>().ToList();
+        #endregion
     }
 }

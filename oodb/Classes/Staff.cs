@@ -52,5 +52,10 @@ namespace oodb.Classes
                    surname == staff.surname &&
                    patronymic == staff.patronymic;
         }
+
+        public override string ToString()
+        {
+            return surname;
+        }
     }
 }

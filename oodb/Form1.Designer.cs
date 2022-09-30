@@ -120,6 +120,28 @@
             this.txtStaffSecondName = new System.Windows.Forms.TextBox();
             this.txtStaffName = new System.Windows.Forms.TextBox();
             this.cbIsStaffEdit = new System.Windows.Forms.CheckBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.cbIsTaskTableEdit = new System.Windows.Forms.CheckBox();
+            this.btnTaskTabkeAdd = new System.Windows.Forms.Button();
+            this.dtpTaskTableDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbTaskTableDuraction = new System.Windows.Forms.ComboBox();
+            this.cmbTaskTableClient = new System.Windows.Forms.ComboBox();
+            this.cmbTaskTableHall = new System.Windows.Forms.ComboBox();
+            this.cmbTaskTableStaff = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dgvTaskTable = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hallDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateLessonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.taskTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -139,6 +161,9 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaskTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -148,6 +173,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(22, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -713,9 +739,11 @@
             // dtpClubCardStart
             // 
             this.dtpClubCardStart.Location = new System.Drawing.Point(831, 215);
+            this.dtpClubCardStart.MinDate = new System.DateTime(2022, 9, 30, 12, 22, 50, 0);
             this.dtpClubCardStart.Name = "dtpClubCardStart";
             this.dtpClubCardStart.Size = new System.Drawing.Size(139, 20);
             this.dtpClubCardStart.TabIndex = 4;
+            this.dtpClubCardStart.Value = new System.DateTime(2022, 9, 30, 12, 22, 50, 0);
             // 
             // cmbClubCardService
             // 
@@ -1024,6 +1052,226 @@
             this.cbIsStaffEdit.UseVisualStyleBackColor = true;
             this.cbIsStaffEdit.CheckedChanged += new System.EventHandler(this.cbIsStaffEdit_CheckedChanged);
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.cbIsTaskTableEdit);
+            this.tabPage6.Controls.Add(this.btnTaskTabkeAdd);
+            this.tabPage6.Controls.Add(this.dtpTaskTableDate);
+            this.tabPage6.Controls.Add(this.cmbTaskTableDuraction);
+            this.tabPage6.Controls.Add(this.cmbTaskTableClient);
+            this.tabPage6.Controls.Add(this.cmbTaskTableHall);
+            this.tabPage6.Controls.Add(this.cmbTaskTableStaff);
+            this.tabPage6.Controls.Add(this.label23);
+            this.tabPage6.Controls.Add(this.label22);
+            this.tabPage6.Controls.Add(this.label21);
+            this.tabPage6.Controls.Add(this.label20);
+            this.tabPage6.Controls.Add(this.label19);
+            this.tabPage6.Controls.Add(this.dgvTaskTable);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1031, 526);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Рассписание";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // cbIsTaskTableEdit
+            // 
+            this.cbIsTaskTableEdit.AutoSize = true;
+            this.cbIsTaskTableEdit.Location = new System.Drawing.Point(836, 33);
+            this.cbIsTaskTableEdit.Name = "cbIsTaskTableEdit";
+            this.cbIsTaskTableEdit.Size = new System.Drawing.Size(125, 17);
+            this.cbIsTaskTableEdit.TabIndex = 12;
+            this.cbIsTaskTableEdit.Text = "Включить удаление";
+            this.cbIsTaskTableEdit.UseVisualStyleBackColor = true;
+            this.cbIsTaskTableEdit.CheckedChanged += new System.EventHandler(this.cbIsTaskTableEdit_CheckedChanged);
+            // 
+            // btnTaskTabkeAdd
+            // 
+            this.btnTaskTabkeAdd.Location = new System.Drawing.Point(861, 366);
+            this.btnTaskTabkeAdd.Name = "btnTaskTabkeAdd";
+            this.btnTaskTabkeAdd.Size = new System.Drawing.Size(89, 50);
+            this.btnTaskTabkeAdd.TabIndex = 11;
+            this.btnTaskTabkeAdd.Text = "Добавить";
+            this.btnTaskTabkeAdd.UseVisualStyleBackColor = true;
+            this.btnTaskTabkeAdd.Click += new System.EventHandler(this.btnTaskTabkeAdd_Click);
+            // 
+            // dtpTaskTableDate
+            // 
+            this.dtpTaskTableDate.Location = new System.Drawing.Point(810, 268);
+            this.dtpTaskTableDate.Name = "dtpTaskTableDate";
+            this.dtpTaskTableDate.Size = new System.Drawing.Size(190, 20);
+            this.dtpTaskTableDate.TabIndex = 10;
+            // 
+            // cmbTaskTableDuraction
+            // 
+            this.cmbTaskTableDuraction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTaskTableDuraction.FormattingEnabled = true;
+            this.cmbTaskTableDuraction.Items.AddRange(new object[] {
+            "30",
+            "45",
+            "60",
+            "90",
+            "120"});
+            this.cmbTaskTableDuraction.Location = new System.Drawing.Point(810, 323);
+            this.cmbTaskTableDuraction.Name = "cmbTaskTableDuraction";
+            this.cmbTaskTableDuraction.Size = new System.Drawing.Size(190, 21);
+            this.cmbTaskTableDuraction.TabIndex = 9;
+            // 
+            // cmbTaskTableClient
+            // 
+            this.cmbTaskTableClient.DataSource = this.clientBindingSource;
+            this.cmbTaskTableClient.DisplayMember = "surname";
+            this.cmbTaskTableClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTaskTableClient.FormattingEnabled = true;
+            this.cmbTaskTableClient.Location = new System.Drawing.Point(810, 212);
+            this.cmbTaskTableClient.Name = "cmbTaskTableClient";
+            this.cmbTaskTableClient.Size = new System.Drawing.Size(190, 21);
+            this.cmbTaskTableClient.TabIndex = 8;
+            // 
+            // cmbTaskTableHall
+            // 
+            this.cmbTaskTableHall.DataSource = this.hallBindingSource;
+            this.cmbTaskTableHall.DisplayMember = "title";
+            this.cmbTaskTableHall.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTaskTableHall.FormattingEnabled = true;
+            this.cmbTaskTableHall.Location = new System.Drawing.Point(810, 156);
+            this.cmbTaskTableHall.Name = "cmbTaskTableHall";
+            this.cmbTaskTableHall.Size = new System.Drawing.Size(190, 21);
+            this.cmbTaskTableHall.TabIndex = 7;
+            // 
+            // cmbTaskTableStaff
+            // 
+            this.cmbTaskTableStaff.DataSource = this.staffBindingSource;
+            this.cmbTaskTableStaff.DisplayMember = "surname";
+            this.cmbTaskTableStaff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTaskTableStaff.FormattingEnabled = true;
+            this.cmbTaskTableStaff.Location = new System.Drawing.Point(810, 100);
+            this.cmbTaskTableStaff.Name = "cmbTaskTableStaff";
+            this.cmbTaskTableStaff.Size = new System.Drawing.Size(190, 21);
+            this.cmbTaskTableStaff.TabIndex = 6;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(850, 299);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(111, 13);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "Продолжительность";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(889, 244);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(33, 13);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Дата";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(884, 188);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 13);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Клиент";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(892, 132);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(26, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Зал";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(875, 76);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 13);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Сотрудник";
+            // 
+            // dgvTaskTable
+            // 
+            this.dgvTaskTable.AllowUserToAddRows = false;
+            this.dgvTaskTable.AutoGenerateColumns = false;
+            this.dgvTaskTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTaskTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn5,
+            this.staffDataGridViewTextBoxColumn,
+            this.hallDataGridViewTextBoxColumn,
+            this.clientDataGridViewTextBoxColumn1,
+            this.dateLessonDataGridViewTextBoxColumn,
+            this.durationDataGridViewTextBoxColumn,
+            this.ttDelete});
+            this.dgvTaskTable.DataSource = this.taskTableBindingSource;
+            this.dgvTaskTable.Location = new System.Drawing.Point(14, 3);
+            this.dgvTaskTable.Name = "dgvTaskTable";
+            this.dgvTaskTable.ReadOnly = true;
+            this.dgvTaskTable.Size = new System.Drawing.Size(761, 516);
+            this.dgvTaskTable.TabIndex = 0;
+            this.dgvTaskTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaskTable_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // staffDataGridViewTextBoxColumn
+            // 
+            this.staffDataGridViewTextBoxColumn.DataPropertyName = "staff";
+            this.staffDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
+            this.staffDataGridViewTextBoxColumn.Name = "staffDataGridViewTextBoxColumn";
+            this.staffDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hallDataGridViewTextBoxColumn
+            // 
+            this.hallDataGridViewTextBoxColumn.DataPropertyName = "hall";
+            this.hallDataGridViewTextBoxColumn.HeaderText = "Зал";
+            this.hallDataGridViewTextBoxColumn.Name = "hallDataGridViewTextBoxColumn";
+            this.hallDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientDataGridViewTextBoxColumn1
+            // 
+            this.clientDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clientDataGridViewTextBoxColumn1.DataPropertyName = "client";
+            this.clientDataGridViewTextBoxColumn1.HeaderText = "Клиент";
+            this.clientDataGridViewTextBoxColumn1.Name = "clientDataGridViewTextBoxColumn1";
+            this.clientDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateLessonDataGridViewTextBoxColumn
+            // 
+            this.dateLessonDataGridViewTextBoxColumn.DataPropertyName = "dateLesson";
+            this.dateLessonDataGridViewTextBoxColumn.HeaderText = "Дата занятия";
+            this.dateLessonDataGridViewTextBoxColumn.Name = "dateLessonDataGridViewTextBoxColumn";
+            this.dateLessonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "duration";
+            this.durationDataGridViewTextBoxColumn.HeaderText = "Продолжительность занятия";
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ttDelete
+            // 
+            this.ttDelete.HeaderText = "Удаление";
+            this.ttDelete.Name = "ttDelete";
+            this.ttDelete.ReadOnly = true;
+            this.ttDelete.Text = "Удалить";
+            this.ttDelete.UseColumnTextForButtonValue = true;
+            this.ttDelete.Visible = false;
+            // 
+            // taskTableBindingSource
+            // 
+            this.taskTableBindingSource.DataSource = typeof(oodb.Classes.TaskTable);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1057,6 +1305,10 @@
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaskTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1154,6 +1406,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn patronymicDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn staffDelete;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dgvTaskTable;
+        private System.Windows.Forms.BindingSource taskTableBindingSource;
+        private System.Windows.Forms.Button btnTaskTabkeAdd;
+        private System.Windows.Forms.DateTimePicker dtpTaskTableDate;
+        private System.Windows.Forms.ComboBox cmbTaskTableDuraction;
+        private System.Windows.Forms.ComboBox cmbTaskTableClient;
+        private System.Windows.Forms.ComboBox cmbTaskTableHall;
+        private System.Windows.Forms.ComboBox cmbTaskTableStaff;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckBox cbIsTaskTableEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hallDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateLessonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn ttDelete;
     }
 }
 
