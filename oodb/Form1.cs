@@ -14,6 +14,11 @@ using static Db4objects.Db4o.Internal.Metadata.HierarchyAnalyzer;
 
 namespace oodb
 {
+    /// <summary>
+    /// Мысли в слух
+    /// Поиск абониментов, чьи абонименты заканчиваются или закончились 
+    /// Нельзя оставлять пустой ячейку в сотруднике(понятия не имею почему)
+    /// </summary>
     public partial class Form1 : Form
     {
         #region Настройка формы
@@ -44,6 +49,10 @@ namespace oodb
             foreach(var cc in dataBase.GetClubCard())
             {
                 clubCardBindingSource.Add(cc);
+            }
+            foreach (var staff in dataBase.GetStaff())
+            {
+                staffBindingSource.Add(staff);
             }
         }
         #endregion
@@ -497,5 +506,194 @@ namespace oodb
             messageBoxSuccessAdd();
         }
         #endregion
+
+        private void dgvStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (dgvStaff.Columns[e.ColumnIndex].Index == dgvStaff.Columns.Count - 1)
+            {
+                if (messageBoxClickResult("Удалить эту запись?") == DialogResult.Yes)
+                {
+                    var id = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    staffBindingSource.RemoveAt(e.RowIndex);
+                    dataBase.DeleteStaff(id);
+                }
+            }
+        }
+
+        private void cbIsStaffEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbIsStaffEdit.Checked)
+            {
+                dgvStaff.Columns[1].ReadOnly = false;
+                dgvStaff.Columns[2].ReadOnly = false;
+                dgvStaff.Columns[3].ReadOnly = false;
+                dgvStaff.Columns[4].ReadOnly = false;
+                dgvStaff.Columns[5].ReadOnly = false;
+                dgvStaff.Columns[6].Visible = true;
+            }
+            else
+            {
+                dgvStaff.Columns[1].ReadOnly = true;
+                dgvStaff.Columns[2].ReadOnly = true;
+                dgvStaff.Columns[3].ReadOnly = true;
+                dgvStaff.Columns[4].ReadOnly = true;
+                dgvStaff.Columns[5].ReadOnly = true;
+                dgvStaff.Columns[6].Visible = false;
+            }
+        }
+
+        private void btnStaffAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtStaffName.Text))
+            {
+                messageBoxError("Вы не ввели имя");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtStaffSecondName.Text))
+            {
+                messageBoxError("Вы не ввели отчество");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtStaffLastName.Text))
+            {
+                messageBoxError("Вы не ввели фамилию");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtStaffAddress.Text))
+            {
+                messageBoxError("Вы не ввели адрес");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtStaffPhone.Text))
+            {
+                messageBoxError("Вы не ввели телефон");
+                return;
+            }
+            Regex phoneRegex = new Regex(@"^[+]{0,1}[7-8]{1}[(]9{1}\d{2}[)]\d{3}[-]\d{2}[-]\d{2}$");
+            MatchCollection matches = phoneRegex.Matches(txtStaffPhone.Text);
+            if (matches.Count == 0)
+            {
+                messageBoxError("Не верный формат телефона");
+                return;
+            }
+            var staff = new Staff();
+            staff.adress = txtStaffAddress.Text;
+            staff.surname = txtStaffLastName.Text;
+            staff.phone = txtStaffPhone.Text;
+            staff.patronymic = txtStaffSecondName.Text;
+            staff.name = txtStaffName.Text;
+            dataBase.AddStaff(staff);
+            staffBindingSource.Add(staff);
+            txtStaffAddress.Clear();
+            txtStaffPhone.Clear();
+            txtStaffSecondName.Clear();
+            txtStaffName.Clear();
+            txtStaffLastName.Clear();
+            messageBoxSuccessAdd();
+        }
+
+        private void txtStaffPhone_TextChanged(object sender, EventArgs e)
+        {
+            //Добавление первой скобки
+            if (txtStaffPhone.Text.Length == 1 && (txtStaffPhone.Text[0] != '+'))
+            {
+                txtStaffPhone.Text += "(9";
+                txtStaffPhone.SelectionStart = 3;
+            }
+            else if (txtStaffPhone.Text.Length == 2 && txtStaffPhone.Text[1] == '7')
+            {
+                txtStaffPhone.Text += "(9";
+                txtStaffPhone.SelectionStart = 4;
+            }
+            //Добавление второй скобки
+            if (txtStaffPhone.Text.Length == 5 && (txtStaffPhone.Text[0] != '+'))
+            {
+                txtStaffPhone.Text += ")";
+                txtStaffPhone.SelectionStart = 6;
+            }
+            else if (txtStaffPhone.Text.Length == 6 && txtStaffPhone.Text[0] == '+')
+            {
+                txtStaffPhone.Text += ")";
+                txtStaffPhone.SelectionStart = 7;
+            }
+            //Добавление -
+            if (txtStaffPhone.Text.Length == 9 && (txtStaffPhone.Text[0] != '+'))
+            {
+                txtStaffPhone.Text += "-";
+                txtStaffPhone.SelectionStart = 10;
+            }
+            else if (txtStaffPhone.Text.Length == 10 && txtStaffPhone.Text[0] == '+')
+            {
+                txtStaffPhone.Text += "-";
+                txtStaffPhone.SelectionStart = 11;
+            }
+            //Добавление -
+            if (txtStaffPhone.Text.Length == 12 && (txtStaffPhone.Text[0] != '+'))
+            {
+                txtStaffPhone.Text += "-";
+                txtStaffPhone.SelectionStart = 13;
+            }
+            else if (txtStaffPhone.Text.Length == 13 && txtStaffPhone.Text[0] == '+')
+            {
+                txtStaffPhone.Text += "-";
+                txtStaffPhone.SelectionStart = 14;
+            }
+        }
+
+        Staff selectedStaff;
+        private void dgvStaff_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            selectedStaff = new Staff();
+            selectedStaff.id = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
+            selectedStaff.adress = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+            selectedStaff.phone = dgvStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
+            selectedStaff.name = dgvStaff.Rows[e.RowIndex].Cells[3].Value.ToString();
+            selectedStaff.patronymic = dgvStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
+            selectedStaff.surname = dgvStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
+        }
+
+        private void dgvStaff_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var staff = new Staff();
+            staff.id = dgvStaff.Rows[e.RowIndex].Cells[0].Value.ToString();
+            staff.adress = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+            staff.phone = dgvStaff.Rows[e.RowIndex].Cells[2].Value.ToString();
+            staff.name = dgvStaff.Rows[e.RowIndex].Cells[3].Value.ToString();
+            staff.patronymic = dgvStaff.Rows[e.RowIndex].Cells[4].Value.ToString();
+            staff.surname = dgvStaff.Rows[e.RowIndex].Cells[5].Value.ToString();
+            if (selectedStaff.Equals(staff))
+            {
+                return;
+            }
+            if (selectedStaff.phone != staff.phone)
+            {
+                Regex phoneRegex = new Regex(@"^[+]{0,1}[7-8]{1}[(]9{1}\d{2}[)]\d{3}[-]\d{2}[-]\d{2}$");
+                MatchCollection matches = phoneRegex.Matches(staff.phone);
+                if (matches.Count == 0)
+                {
+                    messageBoxError("Не верный формат телефона");
+                    dgvStaff[2, e.RowIndex].Value = selectedStaff.phone;
+                    return;
+                }
+            }
+            var dialogResult = messageBoxClickResult("Изменить эту запись?");
+            if (dialogResult == DialogResult.No)
+            {
+                dgvStaff[1, e.RowIndex].Value = selectedStaff.adress;
+                dgvStaff[2, e.RowIndex].Value = selectedStaff.phone;
+                dgvStaff[3, e.RowIndex].Value = selectedStaff.name;
+                dgvStaff[4, e.RowIndex].Value = selectedStaff.patronymic;
+                dgvStaff[5, e.RowIndex].Value = selectedStaff.surname;
+                return;
+            }
+            if (dialogResult == DialogResult.Yes)
+            {
+                dataBase.UpdateStaff(dgvStaff.CurrentRow.DataBoundItem as Staff);
+            }
+        }
     }
 }

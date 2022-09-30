@@ -107,6 +107,28 @@ namespace oodb.Classes
         {
             return db.Query<ClubCard>().ToList();
         }
-        #endregion 
+        #endregion
+        #region
+        public void AddStaff(Staff staff)
+        {
+            db.Store(staff);
+        }
+        public List<Staff> GetStaff() => db.Query<Staff>().ToList();
+        public void DeleteStaff(string id)
+        {
+            var found = db.Query<Staff>(stf => stf.id == id)[0];
+            db.Delete(found);
+        }
+        public void UpdateStaff(Staff staff)
+        {
+            var found = db.Query<Staff>(stf => stf.id == staff.id)[0];
+            found.name = staff.name;
+            found.phone = staff.phone;
+            found.surname = staff.surname;
+            found.adress = staff.adress;
+            found.patronymic = staff.patronymic;
+            db.Store(found);
+        }
+        #endregion
     }
 }

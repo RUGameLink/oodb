@@ -98,6 +98,28 @@
             this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clubCardDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clubCardBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patronymicDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnStaffAdd = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtStaffPhone = new System.Windows.Forms.TextBox();
+            this.txtStaffAddress = new System.Windows.Forms.TextBox();
+            this.txtStaffLastName = new System.Windows.Forms.TextBox();
+            this.txtStaffSecondName = new System.Windows.Forms.TextBox();
+            this.txtStaffName = new System.Windows.Forms.TextBox();
+            this.cbIsStaffEdit = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,6 +136,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudClubCardPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,6 +147,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(22, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -802,6 +828,202 @@
             // 
             this.clubCardBindingSource.DataSource = typeof(oodb.Classes.ClubCard);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.dgvStaff);
+            this.tabPage5.Controls.Add(this.btnStaffAdd);
+            this.tabPage5.Controls.Add(this.label14);
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.label18);
+            this.tabPage5.Controls.Add(this.txtStaffPhone);
+            this.tabPage5.Controls.Add(this.txtStaffAddress);
+            this.tabPage5.Controls.Add(this.txtStaffLastName);
+            this.tabPage5.Controls.Add(this.txtStaffSecondName);
+            this.tabPage5.Controls.Add(this.txtStaffName);
+            this.tabPage5.Controls.Add(this.cbIsStaffEdit);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1031, 526);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Сотрудники";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dgvStaff
+            // 
+            this.dgvStaff.AllowUserToAddRows = false;
+            this.dgvStaff.AutoGenerateColumns = false;
+            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn4,
+            this.adressDataGridViewTextBoxColumn1,
+            this.phoneDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.surnameDataGridViewTextBoxColumn1,
+            this.patronymicDataGridViewTextBoxColumn1,
+            this.staffDelete});
+            this.dgvStaff.DataSource = this.staffBindingSource;
+            this.dgvStaff.Location = new System.Drawing.Point(12, 16);
+            this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.Size = new System.Drawing.Size(730, 482);
+            this.dgvStaff.TabIndex = 23;
+            this.dgvStaff.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvStaff_CellBeginEdit);
+            this.dgvStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellContentClick);
+            this.dgvStaff.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellEndEdit);
+            this.dgvStaff.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            // 
+            // adressDataGridViewTextBoxColumn1
+            // 
+            this.adressDataGridViewTextBoxColumn1.DataPropertyName = "adress";
+            this.adressDataGridViewTextBoxColumn1.HeaderText = "Адрес сотрудника";
+            this.adressDataGridViewTextBoxColumn1.Name = "adressDataGridViewTextBoxColumn1";
+            // 
+            // phoneDataGridViewTextBoxColumn1
+            // 
+            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Телефон сотрудника";
+            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Имя сотрудника";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            // 
+            // surnameDataGridViewTextBoxColumn1
+            // 
+            this.surnameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Фамилия сотрудника";
+            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
+            // 
+            // patronymicDataGridViewTextBoxColumn1
+            // 
+            this.patronymicDataGridViewTextBoxColumn1.DataPropertyName = "patronymic";
+            this.patronymicDataGridViewTextBoxColumn1.HeaderText = "Отчество сотрудника";
+            this.patronymicDataGridViewTextBoxColumn1.Name = "patronymicDataGridViewTextBoxColumn1";
+            // 
+            // staffDelete
+            // 
+            this.staffDelete.HeaderText = "Удаление";
+            this.staffDelete.Name = "staffDelete";
+            this.staffDelete.Text = "Удалить";
+            this.staffDelete.UseColumnTextForButtonValue = true;
+            this.staffDelete.Visible = false;
+            // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataSource = typeof(oodb.Classes.Staff);
+            // 
+            // btnStaffAdd
+            // 
+            this.btnStaffAdd.Location = new System.Drawing.Point(842, 383);
+            this.btnStaffAdd.Name = "btnStaffAdd";
+            this.btnStaffAdd.Size = new System.Drawing.Size(106, 48);
+            this.btnStaffAdd.TabIndex = 22;
+            this.btnStaffAdd.Text = "Добавить";
+            this.btnStaffAdd.UseVisualStyleBackColor = true;
+            this.btnStaffAdd.Click += new System.EventHandler(this.btnStaffAdd_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(865, 317);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Телефон";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(872, 258);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 13);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "Адрес";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(863, 194);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(56, 13);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "Фамилия";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(864, 133);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(54, 13);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "Отчество";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(877, 71);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(29, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Имя";
+            // 
+            // txtStaffPhone
+            // 
+            this.txtStaffPhone.Location = new System.Drawing.Point(814, 333);
+            this.txtStaffPhone.Name = "txtStaffPhone";
+            this.txtStaffPhone.Size = new System.Drawing.Size(155, 20);
+            this.txtStaffPhone.TabIndex = 16;
+            this.txtStaffPhone.TextChanged += new System.EventHandler(this.txtStaffPhone_TextChanged);
+            // 
+            // txtStaffAddress
+            // 
+            this.txtStaffAddress.Location = new System.Drawing.Point(814, 274);
+            this.txtStaffAddress.Name = "txtStaffAddress";
+            this.txtStaffAddress.Size = new System.Drawing.Size(155, 20);
+            this.txtStaffAddress.TabIndex = 15;
+            // 
+            // txtStaffLastName
+            // 
+            this.txtStaffLastName.Location = new System.Drawing.Point(814, 210);
+            this.txtStaffLastName.Name = "txtStaffLastName";
+            this.txtStaffLastName.Size = new System.Drawing.Size(155, 20);
+            this.txtStaffLastName.TabIndex = 14;
+            // 
+            // txtStaffSecondName
+            // 
+            this.txtStaffSecondName.Location = new System.Drawing.Point(814, 149);
+            this.txtStaffSecondName.Name = "txtStaffSecondName";
+            this.txtStaffSecondName.Size = new System.Drawing.Size(155, 20);
+            this.txtStaffSecondName.TabIndex = 13;
+            // 
+            // txtStaffName
+            // 
+            this.txtStaffName.Location = new System.Drawing.Point(814, 90);
+            this.txtStaffName.Name = "txtStaffName";
+            this.txtStaffName.Size = new System.Drawing.Size(155, 20);
+            this.txtStaffName.TabIndex = 12;
+            // 
+            // cbIsStaffEdit
+            // 
+            this.cbIsStaffEdit.AutoSize = true;
+            this.cbIsStaffEdit.Location = new System.Drawing.Point(807, 16);
+            this.cbIsStaffEdit.Name = "cbIsStaffEdit";
+            this.cbIsStaffEdit.Size = new System.Drawing.Size(161, 17);
+            this.cbIsStaffEdit.TabIndex = 1;
+            this.cbIsStaffEdit.Text = "Включить редактирование";
+            this.cbIsStaffEdit.UseVisualStyleBackColor = true;
+            this.cbIsStaffEdit.CheckedChanged += new System.EventHandler(this.cbIsStaffEdit_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -831,6 +1053,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudClubCardPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -906,6 +1132,28 @@
         private System.Windows.Forms.NumericUpDown nudClubCardPrice;
         private System.Windows.Forms.DateTimePicker dtpClubCardEnd;
         private System.Windows.Forms.Button btnClubCardAdd;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.BindingSource staffBindingSource;
+        private System.Windows.Forms.CheckBox cbIsStaffEdit;
+        private System.Windows.Forms.Button btnStaffAdd;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtStaffPhone;
+        private System.Windows.Forms.TextBox txtStaffAddress;
+        private System.Windows.Forms.TextBox txtStaffLastName;
+        private System.Windows.Forms.TextBox txtStaffSecondName;
+        private System.Windows.Forms.TextBox txtStaffName;
+        private System.Windows.Forms.DataGridView dgvStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patronymicDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn staffDelete;
     }
 }
 

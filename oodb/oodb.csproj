@@ -90,6 +90,7 @@
     <None Include="Properties\DataSources\oodb.Classes.ClubCard.datasource" />
     <None Include="Properties\DataSources\oodb.Classes.Hall.datasource" />
     <None Include="Properties\DataSources\oodb.Classes.Service.datasource" />
+    <None Include="Properties\DataSources\oodb.Classes.Staff.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

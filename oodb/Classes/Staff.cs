@@ -41,5 +41,16 @@ namespace oodb.Classes
             this.surname = surname;
             this.patronymic = patronymic;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Staff staff &&
+                   id == staff.id &&
+                   adress == staff.adress &&
+                   phone == staff.phone &&
+                   name == staff.name &&
+                   surname == staff.surname &&
+                   patronymic == staff.patronymic;
+        }
     }
 }
