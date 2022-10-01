@@ -90,23 +90,9 @@
             this.cmbClubCardClient = new System.Windows.Forms.ComboBox();
             this.cbIsClubCardEdit = new System.Windows.Forms.CheckBox();
             this.dgvClubCard = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clubCardDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clubCardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patronymicDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staffDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnStaffAdd = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -120,6 +106,20 @@
             this.txtStaffSecondName = new System.Windows.Forms.TextBox();
             this.txtStaffName = new System.Windows.Forms.TextBox();
             this.cbIsStaffEdit = new System.Windows.Forms.CheckBox();
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clubCardDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patronymicDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -772,58 +772,6 @@
             this.dgvClubCard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClubCard_CellContentClick);
             this.dgvClubCard.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
             // 
-            // idDataGridViewTextBoxColumn3
-            // 
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // clientDataGridViewTextBoxColumn
-            // 
-            this.clientDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clientDataGridViewTextBoxColumn.DataPropertyName = "client";
-            this.clientDataGridViewTextBoxColumn.HeaderText = "Клиент";
-            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
-            this.clientDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // serviceDataGridViewTextBoxColumn
-            // 
-            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "service";
-            this.serviceDataGridViewTextBoxColumn.HeaderText = "Услуга";
-            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
-            this.serviceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // startCardDataGridViewTextBoxColumn
-            // 
-            this.startCardDataGridViewTextBoxColumn.DataPropertyName = "startCard";
-            this.startCardDataGridViewTextBoxColumn.HeaderText = "Старт карты";
-            this.startCardDataGridViewTextBoxColumn.Name = "startCardDataGridViewTextBoxColumn";
-            this.startCardDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // endCardDataGridViewTextBoxColumn
-            // 
-            this.endCardDataGridViewTextBoxColumn.DataPropertyName = "endCard";
-            this.endCardDataGridViewTextBoxColumn.HeaderText = "Конец карты";
-            this.endCardDataGridViewTextBoxColumn.Name = "endCardDataGridViewTextBoxColumn";
-            this.endCardDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn1
-            // 
-            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn1.HeaderText = "Цена абонемента";
-            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
-            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // clubCardDelete
-            // 
-            this.clubCardDelete.HeaderText = "Удаление";
-            this.clubCardDelete.Name = "clubCardDelete";
-            this.clubCardDelete.ReadOnly = true;
-            this.clubCardDelete.Text = "Удалить";
-            this.clubCardDelete.UseColumnTextForButtonValue = true;
-            this.clubCardDelete.Visible = false;
-            // 
             // clubCardBindingSource
             // 
             this.clubCardBindingSource.DataSource = typeof(oodb.Classes.ClubCard);
@@ -872,51 +820,6 @@
             this.dgvStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellContentClick);
             this.dgvStaff.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellEndEdit);
             this.dgvStaff.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
-            // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            // 
-            // adressDataGridViewTextBoxColumn1
-            // 
-            this.adressDataGridViewTextBoxColumn1.DataPropertyName = "adress";
-            this.adressDataGridViewTextBoxColumn1.HeaderText = "Адрес сотрудника";
-            this.adressDataGridViewTextBoxColumn1.Name = "adressDataGridViewTextBoxColumn1";
-            // 
-            // phoneDataGridViewTextBoxColumn1
-            // 
-            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Телефон сотрудника";
-            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Имя сотрудника";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            // 
-            // surnameDataGridViewTextBoxColumn1
-            // 
-            this.surnameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Фамилия сотрудника";
-            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
-            // 
-            // patronymicDataGridViewTextBoxColumn1
-            // 
-            this.patronymicDataGridViewTextBoxColumn1.DataPropertyName = "patronymic";
-            this.patronymicDataGridViewTextBoxColumn1.HeaderText = "Отчество сотрудника";
-            this.patronymicDataGridViewTextBoxColumn1.Name = "patronymicDataGridViewTextBoxColumn1";
-            // 
-            // staffDelete
-            // 
-            this.staffDelete.HeaderText = "Удаление";
-            this.staffDelete.Name = "staffDelete";
-            this.staffDelete.Text = "Удалить";
-            this.staffDelete.UseColumnTextForButtonValue = true;
-            this.staffDelete.Visible = false;
             // 
             // staffBindingSource
             // 
@@ -1024,6 +927,109 @@
             this.cbIsStaffEdit.UseVisualStyleBackColor = true;
             this.cbIsStaffEdit.CheckedChanged += new System.EventHandler(this.cbIsStaffEdit_CheckedChanged);
             // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Клиент";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            this.clientDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serviceDataGridViewTextBoxColumn
+            // 
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "Услуга";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            this.serviceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // startCardDataGridViewTextBoxColumn
+            // 
+            this.startCardDataGridViewTextBoxColumn.DataPropertyName = "startCard";
+            this.startCardDataGridViewTextBoxColumn.HeaderText = "Старт карты";
+            this.startCardDataGridViewTextBoxColumn.Name = "startCardDataGridViewTextBoxColumn";
+            this.startCardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // endCardDataGridViewTextBoxColumn
+            // 
+            this.endCardDataGridViewTextBoxColumn.DataPropertyName = "endCard";
+            this.endCardDataGridViewTextBoxColumn.HeaderText = "Конец карты";
+            this.endCardDataGridViewTextBoxColumn.Name = "endCardDataGridViewTextBoxColumn";
+            this.endCardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Цена абонемента";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // clubCardDelete
+            // 
+            this.clubCardDelete.HeaderText = "Удаление";
+            this.clubCardDelete.Name = "clubCardDelete";
+            this.clubCardDelete.ReadOnly = true;
+            this.clubCardDelete.Text = "Удалить";
+            this.clubCardDelete.UseColumnTextForButtonValue = true;
+            this.clubCardDelete.Visible = false;
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // adressDataGridViewTextBoxColumn1
+            // 
+            this.adressDataGridViewTextBoxColumn1.DataPropertyName = "adress";
+            this.adressDataGridViewTextBoxColumn1.HeaderText = "Адрес сотрудника";
+            this.adressDataGridViewTextBoxColumn1.Name = "adressDataGridViewTextBoxColumn1";
+            this.adressDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn1
+            // 
+            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Телефон сотрудника";
+            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
+            this.phoneDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Имя сотрудника";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // surnameDataGridViewTextBoxColumn1
+            // 
+            this.surnameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Фамилия сотрудника";
+            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
+            this.surnameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // patronymicDataGridViewTextBoxColumn1
+            // 
+            this.patronymicDataGridViewTextBoxColumn1.DataPropertyName = "patronymic";
+            this.patronymicDataGridViewTextBoxColumn1.HeaderText = "Отчество сотрудника";
+            this.patronymicDataGridViewTextBoxColumn1.Name = "patronymicDataGridViewTextBoxColumn1";
+            this.patronymicDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // staffDelete
+            // 
+            this.staffDelete.HeaderText = "Удаление";
+            this.staffDelete.Name = "staffDelete";
+            this.staffDelete.Text = "Удалить";
+            this.staffDelete.UseColumnTextForButtonValue = true;
+            this.staffDelete.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1114,13 +1120,6 @@
         private System.Windows.Forms.DataGridView dgvClubCard;
         private System.Windows.Forms.BindingSource clubCardBindingSource;
         private System.Windows.Forms.CheckBox cbIsClubCardEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startCardDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endCardDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewButtonColumn clubCardDelete;
         private System.Windows.Forms.ComboBox cmbClubCardService;
         private System.Windows.Forms.ComboBox cmbClubCardClient;
         private System.Windows.Forms.DateTimePicker dtpClubCardStart;
@@ -1147,6 +1146,13 @@
         private System.Windows.Forms.TextBox txtStaffSecondName;
         private System.Windows.Forms.TextBox txtStaffName;
         private System.Windows.Forms.DataGridView dgvStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startCardDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endCardDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn clubCardDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
