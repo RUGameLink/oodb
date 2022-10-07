@@ -394,6 +394,7 @@
             this.dgvHall.DataSource = this.hallBindingSource;
             this.dgvHall.Location = new System.Drawing.Point(30, 37);
             this.dgvHall.Name = "dgvHall";
+            this.dgvHall.ReadOnly = true;
             this.dgvHall.Size = new System.Drawing.Size(483, 463);
             this.dgvHall.TabIndex = 0;
             this.dgvHall.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvHall_CellBeginEdit);
@@ -420,6 +421,7 @@
             // 
             this.hallDelete.HeaderText = "Удаление";
             this.hallDelete.Name = "hallDelete";
+            this.hallDelete.ReadOnly = true;
             this.hallDelete.Text = "Удалить";
             this.hallDelete.UseColumnTextForButtonValue = true;
             this.hallDelete.Visible = false;
