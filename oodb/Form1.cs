@@ -797,5 +797,16 @@ namespace oodb
                 serviceBindingSource.Add(a);
             }
         }
+
+        private void ResetServiceBtn_Click(object sender, EventArgs e)
+        {
+            nudServiceSerach.Value = 100;
+            txtServiceSearch.Text = "";
+            serviceBindingSource.Clear();
+            foreach (var serv in dataBase.GetService())
+            {
+                serviceBindingSource.Add(serv);
+            }
+        }
     }
 }

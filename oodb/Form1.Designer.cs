@@ -46,6 +46,11 @@
             this.nudServiceSerach = new System.Windows.Forms.NumericUpDown();
             this.cbIsServiceEdit = new System.Windows.Forms.CheckBox();
             this.dgvService = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbHallIsEdit = new System.Windows.Forms.CheckBox();
             this.btnHallAdd = new System.Windows.Forms.Button();
@@ -152,11 +157,7 @@
             this.taskTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
-            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ResetServiceBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
@@ -166,6 +167,7 @@
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServiceSerach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
@@ -188,7 +190,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.taskTableBindingSource)).BeginInit();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -313,6 +314,7 @@
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.ResetServiceBtn);
             this.tabPage11.Controls.Add(this.label26);
             this.tabPage11.Controls.Add(this.txtServiceSearch);
             this.tabPage11.Controls.Add(this.label25);
@@ -406,6 +408,36 @@
             this.dgvService.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
             this.dgvService.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvService_DataError);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Название услуги";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // serviceDelete
+            // 
+            this.serviceDelete.HeaderText = "Удаление";
+            this.serviceDelete.Name = "serviceDelete";
+            this.serviceDelete.Text = "Удалить";
+            this.serviceDelete.UseColumnTextForButtonValue = true;
+            this.serviceDelete.Visible = false;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(oodb.Classes.Service);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.cbHallIsEdit);
@@ -470,7 +502,6 @@
             this.dgvHall.DataSource = this.hallBindingSource;
             this.dgvHall.Location = new System.Drawing.Point(30, 37);
             this.dgvHall.Name = "dgvHall";
-            this.dgvHall.ReadOnly = true;
             this.dgvHall.Size = new System.Drawing.Size(483, 463);
             this.dgvHall.TabIndex = 0;
             this.dgvHall.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvHall_CellBeginEdit);
@@ -483,7 +514,6 @@
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn1.HeaderText = "id";
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // titleDataGridViewTextBoxColumn1
             // 
@@ -491,13 +521,11 @@
             this.titleDataGridViewTextBoxColumn1.DataPropertyName = "title";
             this.titleDataGridViewTextBoxColumn1.HeaderText = "Зал";
             this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // hallDelete
             // 
             this.hallDelete.HeaderText = "Удаление";
             this.hallDelete.Name = "hallDelete";
-            this.hallDelete.ReadOnly = true;
             this.hallDelete.Text = "Удалить";
             this.hallDelete.UseColumnTextForButtonValue = true;
             this.hallDelete.Visible = false;
@@ -803,6 +831,8 @@
             // 
             // cmbClubCardService
             // 
+            this.cmbClubCardService.DataSource = this.serviceBindingSource;
+            this.cmbClubCardService.DisplayMember = "Title";
             this.cmbClubCardService.FormattingEnabled = true;
             this.cmbClubCardService.Location = new System.Drawing.Point(51, 146);
             this.cmbClubCardService.Name = "cmbClubCardService";
@@ -1427,35 +1457,15 @@
             this.dgvSearch.Size = new System.Drawing.Size(976, 462);
             this.dgvSearch.TabIndex = 0;
             // 
-            // serviceBindingSource
+            // ResetServiceBtn
             // 
-            this.serviceBindingSource.DataSource = typeof(oodb.Classes.Service);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Название услуги";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Цена";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // serviceDelete
-            // 
-            this.serviceDelete.HeaderText = "Удаление";
-            this.serviceDelete.Name = "serviceDelete";
-            this.serviceDelete.Text = "Удалить";
-            this.serviceDelete.UseColumnTextForButtonValue = true;
-            this.serviceDelete.Visible = false;
+            this.ResetServiceBtn.Location = new System.Drawing.Point(134, 157);
+            this.ResetServiceBtn.Name = "ResetServiceBtn";
+            this.ResetServiceBtn.Size = new System.Drawing.Size(120, 30);
+            this.ResetServiceBtn.TabIndex = 4;
+            this.ResetServiceBtn.Text = "Сбросить";
+            this.ResetServiceBtn.UseVisualStyleBackColor = true;
+            this.ResetServiceBtn.Click += new System.EventHandler(this.ResetServiceBtn_Click);
             // 
             // Form1
             // 
@@ -1477,6 +1487,7 @@
             this.tabPage11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServiceSerach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).EndInit();
@@ -1505,7 +1516,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.taskTableBindingSource)).EndInit();
             this.tabPage9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1642,5 +1652,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewButtonColumn serviceDelete;
         private System.Windows.Forms.BindingSource serviceBindingSource;
+        private System.Windows.Forms.Button ResetServiceBtn;
     }
 }
