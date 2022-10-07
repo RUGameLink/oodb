@@ -31,19 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnServiceAdd = new System.Windows.Forms.Button();
             this.nudServicePrice = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtServiceTitle = new System.Windows.Forms.TextBox();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtServiceSearch = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.nudServiceSerach = new System.Windows.Forms.NumericUpDown();
             this.cbIsServiceEdit = new System.Windows.Forms.CheckBox();
             this.dgvService = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbHallIsEdit = new System.Windows.Forms.CheckBox();
             this.btnHallAdd = new System.Windows.Forms.Button();
@@ -77,18 +79,24 @@
             this.gdvCliet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.btnClubCardAdd = new System.Windows.Forms.Button();
+            this.cbIsClubCardEdit = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.cmbClubCardClient = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.cmbClubCardService = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.dtpClubCardStart = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.dtpClubCardEnd = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.nudClubCardPrice = new System.Windows.Forms.NumericUpDown();
-            this.dtpClubCardEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpClubCardStart = new System.Windows.Forms.DateTimePicker();
-            this.cmbClubCardService = new System.Windows.Forms.ComboBox();
-            this.cmbClubCardClient = new System.Windows.Forms.ComboBox();
-            this.cbIsClubCardEdit = new System.Windows.Forms.CheckBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.btnClubCardReset = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.nudClubCardSearch = new System.Windows.Forms.NumericUpDown();
             this.dgvClubCard = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -142,12 +150,22 @@
             this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.taskTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.dgvSearch = new System.Windows.Forms.DataGridView();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServicePrice)).BeginInit();
+            this.tabPage11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServiceSerach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
@@ -155,7 +173,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudClubCardPrice)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudClubCardSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -164,6 +186,9 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaskTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskTableBindingSource)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -174,6 +199,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Location = new System.Drawing.Point(22, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -182,7 +208,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.tabControl3);
             this.tabPage1.Controls.Add(this.cbIsServiceEdit);
             this.tabPage1.Controls.Add(this.dgvService);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -193,6 +219,27 @@
             this.tabPage1.Text = "Услуги";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.tabPage10);
+            this.tabControl3.Controls.Add(this.tabPage11);
+            this.tabControl3.Location = new System.Drawing.Point(649, 83);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(377, 303);
+            this.tabControl3.TabIndex = 3;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.groupBox1);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(369, 277);
+            this.tabPage10.TabIndex = 0;
+            this.tabPage10.Text = "Добавление";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnServiceAdd);
@@ -200,7 +247,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtServiceTitle);
-            this.groupBox1.Location = new System.Drawing.Point(676, 83);
+            this.groupBox1.Location = new System.Drawing.Point(6, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(349, 241);
             this.groupBox1.TabIndex = 2;
@@ -264,6 +311,69 @@
             this.txtServiceTitle.Size = new System.Drawing.Size(120, 20);
             this.txtServiceTitle.TabIndex = 0;
             // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.label26);
+            this.tabPage11.Controls.Add(this.txtServiceSearch);
+            this.tabPage11.Controls.Add(this.label25);
+            this.tabPage11.Controls.Add(this.nudServiceSerach);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(369, 277);
+            this.tabPage11.TabIndex = 1;
+            this.tabPage11.Text = "Поиск";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(164, 90);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(57, 13);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Название";
+            // 
+            // txtServiceSearch
+            // 
+            this.txtServiceSearch.Location = new System.Drawing.Point(134, 120);
+            this.txtServiceSearch.Name = "txtServiceSearch";
+            this.txtServiceSearch.Size = new System.Drawing.Size(120, 20);
+            this.txtServiceSearch.TabIndex = 2;
+            this.txtServiceSearch.TextChanged += new System.EventHandler(this.txtServiceSearch_TextChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(161, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(62, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Стоимость";
+            // 
+            // nudServiceSerach
+            // 
+            this.nudServiceSerach.Location = new System.Drawing.Point(134, 47);
+            this.nudServiceSerach.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudServiceSerach.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudServiceSerach.Name = "nudServiceSerach";
+            this.nudServiceSerach.Size = new System.Drawing.Size(120, 20);
+            this.nudServiceSerach.TabIndex = 0;
+            this.nudServiceSerach.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudServiceSerach.ValueChanged += new System.EventHandler(this.nudServiceSerach_ValueChanged);
+            // 
             // cbIsServiceEdit
             // 
             this.cbIsServiceEdit.AutoSize = true;
@@ -282,8 +392,8 @@
             this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvService.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.serviceDelete});
             this.dgvService.DataSource = this.serviceBindingSource;
             this.dgvService.Location = new System.Drawing.Point(20, 18);
@@ -295,40 +405,6 @@
             this.dgvService.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvService_CellEndEdit);
             this.dgvService.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.tableValidating);
             this.dgvService.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvService_DataError);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Название услуги";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // serviceDelete
-            // 
-            this.serviceDelete.HeaderText = "Удаление";
-            this.serviceDelete.Name = "serviceDelete";
-            this.serviceDelete.Text = "Удалить";
-            this.serviceDelete.UseColumnTextForButtonValue = true;
-            this.serviceDelete.Visible = false;
-            // 
-            // serviceBindingSource
-            // 
-            this.serviceBindingSource.DataSource = typeof(oodb.Classes.Service);
             // 
             // tabPage2
             // 
@@ -634,18 +710,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.btnClubCardAdd);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Controls.Add(this.label9);
-            this.tabPage4.Controls.Add(this.nudClubCardPrice);
-            this.tabPage4.Controls.Add(this.dtpClubCardEnd);
-            this.tabPage4.Controls.Add(this.dtpClubCardStart);
-            this.tabPage4.Controls.Add(this.cmbClubCardService);
-            this.tabPage4.Controls.Add(this.cmbClubCardClient);
-            this.tabPage4.Controls.Add(this.cbIsClubCardEdit);
+            this.tabPage4.Controls.Add(this.tabControl2);
             this.tabPage4.Controls.Add(this.dgvClubCard);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -654,9 +719,41 @@
             this.tabPage4.Text = "Абонименты";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage7);
+            this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Location = new System.Drawing.Point(762, 38);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(247, 455);
+            this.tabControl2.TabIndex = 13;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.btnClubCardAdd);
+            this.tabPage7.Controls.Add(this.cbIsClubCardEdit);
+            this.tabPage7.Controls.Add(this.label13);
+            this.tabPage7.Controls.Add(this.cmbClubCardClient);
+            this.tabPage7.Controls.Add(this.label12);
+            this.tabPage7.Controls.Add(this.cmbClubCardService);
+            this.tabPage7.Controls.Add(this.label11);
+            this.tabPage7.Controls.Add(this.dtpClubCardStart);
+            this.tabPage7.Controls.Add(this.label10);
+            this.tabPage7.Controls.Add(this.dtpClubCardEnd);
+            this.tabPage7.Controls.Add(this.label9);
+            this.tabPage7.Controls.Add(this.nudClubCardPrice);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(239, 429);
+            this.tabPage7.TabIndex = 0;
+            this.tabPage7.Text = "Добавление";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
             // btnClubCardAdd
             // 
-            this.btnClubCardAdd.Location = new System.Drawing.Point(855, 359);
+            this.btnClubCardAdd.Location = new System.Drawing.Point(75, 343);
             this.btnClubCardAdd.Name = "btnClubCardAdd";
             this.btnClubCardAdd.Size = new System.Drawing.Size(91, 39);
             this.btnClubCardAdd.TabIndex = 12;
@@ -664,46 +761,93 @@
             this.btnClubCardAdd.UseVisualStyleBackColor = true;
             this.btnClubCardAdd.Click += new System.EventHandler(this.btnClubCardAdd_Click);
             // 
+            // cbIsClubCardEdit
+            // 
+            this.cbIsClubCardEdit.AutoSize = true;
+            this.cbIsClubCardEdit.Location = new System.Drawing.Point(58, 38);
+            this.cbIsClubCardEdit.Name = "cbIsClubCardEdit";
+            this.cbIsClubCardEdit.Size = new System.Drawing.Size(125, 17);
+            this.cbIsClubCardEdit.TabIndex = 1;
+            this.cbIsClubCardEdit.Text = "Включить удаление";
+            this.cbIsClubCardEdit.UseVisualStyleBackColor = true;
+            this.cbIsClubCardEdit.CheckedChanged += new System.EventHandler(this.cbIsClubCardEdit_CheckedChanged);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(869, 298);
+            this.label13.Location = new System.Drawing.Point(89, 288);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 13);
             this.label13.TabIndex = 11;
             this.label13.Text = "Стоимость";
             // 
+            // cmbClubCardClient
+            // 
+            this.cmbClubCardClient.DataSource = this.clientBindingSource;
+            this.cmbClubCardClient.DisplayMember = "surname";
+            this.cmbClubCardClient.FormattingEnabled = true;
+            this.cmbClubCardClient.Location = new System.Drawing.Point(51, 90);
+            this.cmbClubCardClient.Name = "cmbClubCardClient";
+            this.cmbClubCardClient.Size = new System.Drawing.Size(139, 21);
+            this.cmbClubCardClient.TabIndex = 2;
+            this.cmbClubCardClient.ValueMember = "id";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(867, 245);
+            this.label12.Location = new System.Drawing.Point(87, 233);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
             this.label12.TabIndex = 10;
             this.label12.Text = "Дата конца";
             // 
+            // cmbClubCardService
+            // 
+            this.cmbClubCardService.FormattingEnabled = true;
+            this.cmbClubCardService.Location = new System.Drawing.Point(51, 146);
+            this.cmbClubCardService.Name = "cmbClubCardService";
+            this.cmbClubCardService.Size = new System.Drawing.Size(139, 21);
+            this.cmbClubCardService.TabIndex = 3;
+            this.cmbClubCardService.ValueMember = "id";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(865, 192);
+            this.label11.Location = new System.Drawing.Point(85, 178);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 13);
             this.label11.TabIndex = 9;
             this.label11.Text = "Дата начала";
             // 
+            // dtpClubCardStart
+            // 
+            this.dtpClubCardStart.Location = new System.Drawing.Point(51, 202);
+            this.dtpClubCardStart.MinDate = new System.DateTime(2022, 9, 30, 12, 22, 50, 0);
+            this.dtpClubCardStart.Name = "dtpClubCardStart";
+            this.dtpClubCardStart.Size = new System.Drawing.Size(139, 20);
+            this.dtpClubCardStart.TabIndex = 4;
+            this.dtpClubCardStart.Value = new System.DateTime(2022, 9, 30, 12, 22, 50, 0);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(879, 138);
+            this.label10.Location = new System.Drawing.Point(99, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 13);
             this.label10.TabIndex = 8;
             this.label10.Text = "Услуга";
             // 
+            // dtpClubCardEnd
+            // 
+            this.dtpClubCardEnd.Location = new System.Drawing.Point(51, 257);
+            this.dtpClubCardEnd.Name = "dtpClubCardEnd";
+            this.dtpClubCardEnd.Size = new System.Drawing.Size(139, 20);
+            this.dtpClubCardEnd.TabIndex = 5;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(879, 84);
+            this.label9.Location = new System.Drawing.Point(99, 66);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 7;
@@ -711,7 +855,7 @@
             // 
             // nudClubCardPrice
             // 
-            this.nudClubCardPrice.Location = new System.Drawing.Point(831, 321);
+            this.nudClubCardPrice.Location = new System.Drawing.Point(51, 312);
             this.nudClubCardPrice.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -731,54 +875,45 @@
             0,
             0});
             // 
-            // dtpClubCardEnd
+            // tabPage8
             // 
-            this.dtpClubCardEnd.Location = new System.Drawing.Point(831, 268);
-            this.dtpClubCardEnd.Name = "dtpClubCardEnd";
-            this.dtpClubCardEnd.Size = new System.Drawing.Size(139, 20);
-            this.dtpClubCardEnd.TabIndex = 5;
+            this.tabPage8.Controls.Add(this.btnClubCardReset);
+            this.tabPage8.Controls.Add(this.label24);
+            this.tabPage8.Controls.Add(this.nudClubCardSearch);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(239, 429);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "Поиск";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // dtpClubCardStart
+            // btnClubCardReset
             // 
-            this.dtpClubCardStart.Location = new System.Drawing.Point(831, 215);
-            this.dtpClubCardStart.MinDate = new System.DateTime(2022, 9, 30, 12, 22, 50, 0);
-            this.dtpClubCardStart.Name = "dtpClubCardStart";
-            this.dtpClubCardStart.Size = new System.Drawing.Size(139, 20);
-            this.dtpClubCardStart.TabIndex = 4;
-            this.dtpClubCardStart.Value = new System.DateTime(2022, 9, 30, 12, 22, 50, 0);
+            this.btnClubCardReset.Location = new System.Drawing.Point(77, 88);
+            this.btnClubCardReset.Name = "btnClubCardReset";
+            this.btnClubCardReset.Size = new System.Drawing.Size(85, 34);
+            this.btnClubCardReset.TabIndex = 2;
+            this.btnClubCardReset.Text = "Сбросить";
+            this.btnClubCardReset.UseVisualStyleBackColor = true;
+            this.btnClubCardReset.Click += new System.EventHandler(this.btnClubCardReset_Click);
             // 
-            // cmbClubCardService
+            // label24
             // 
-            this.cmbClubCardService.DataSource = this.serviceBindingSource;
-            this.cmbClubCardService.DisplayMember = "title";
-            this.cmbClubCardService.FormattingEnabled = true;
-            this.cmbClubCardService.Location = new System.Drawing.Point(831, 161);
-            this.cmbClubCardService.Name = "cmbClubCardService";
-            this.cmbClubCardService.Size = new System.Drawing.Size(139, 21);
-            this.cmbClubCardService.TabIndex = 3;
-            this.cmbClubCardService.ValueMember = "id";
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 20);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(228, 13);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Количество дней до окончания абонимента";
             // 
-            // cmbClubCardClient
+            // nudClubCardSearch
             // 
-            this.cmbClubCardClient.DataSource = this.clientBindingSource;
-            this.cmbClubCardClient.DisplayMember = "surname";
-            this.cmbClubCardClient.FormattingEnabled = true;
-            this.cmbClubCardClient.Location = new System.Drawing.Point(831, 107);
-            this.cmbClubCardClient.Name = "cmbClubCardClient";
-            this.cmbClubCardClient.Size = new System.Drawing.Size(139, 21);
-            this.cmbClubCardClient.TabIndex = 2;
-            this.cmbClubCardClient.ValueMember = "id";
-            // 
-            // cbIsClubCardEdit
-            // 
-            this.cbIsClubCardEdit.AutoSize = true;
-            this.cbIsClubCardEdit.Location = new System.Drawing.Point(847, 53);
-            this.cbIsClubCardEdit.Name = "cbIsClubCardEdit";
-            this.cbIsClubCardEdit.Size = new System.Drawing.Size(125, 17);
-            this.cbIsClubCardEdit.TabIndex = 1;
-            this.cbIsClubCardEdit.Text = "Включить удаление";
-            this.cbIsClubCardEdit.UseVisualStyleBackColor = true;
-            this.cbIsClubCardEdit.CheckedChanged += new System.EventHandler(this.cbIsClubCardEdit_CheckedChanged);
+            this.nudClubCardSearch.Location = new System.Drawing.Point(45, 51);
+            this.nudClubCardSearch.Name = "nudClubCardSearch";
+            this.nudClubCardSearch.Size = new System.Drawing.Size(150, 20);
+            this.nudClubCardSearch.TabIndex = 0;
+            this.nudClubCardSearch.ValueChanged += new System.EventHandler(this.nudClubCardSearch_ValueChanged);
             // 
             // dgvClubCard
             // 
@@ -1274,6 +1409,54 @@
             // 
             this.taskTableBindingSource.DataSource = typeof(oodb.Classes.TaskTable);
             // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.dgvSearch);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(1031, 526);
+            this.tabPage9.TabIndex = 6;
+            this.tabPage9.Text = "Поиск 1";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // dgvSearch
+            // 
+            this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearch.Location = new System.Drawing.Point(33, 36);
+            this.dgvSearch.Name = "dgvSearch";
+            this.dgvSearch.Size = new System.Drawing.Size(976, 462);
+            this.dgvSearch.TabIndex = 0;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(oodb.Classes.Service);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Название услуги";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // serviceDelete
+            // 
+            this.serviceDelete.HeaderText = "Удаление";
+            this.serviceDelete.Name = "serviceDelete";
+            this.serviceDelete.Text = "Удалить";
+            this.serviceDelete.UseColumnTextForButtonValue = true;
+            this.serviceDelete.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1285,11 +1468,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage10.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServicePrice)).EndInit();
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServiceSerach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).EndInit();
@@ -1299,8 +1486,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudClubCardPrice)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudClubCardSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClubCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubCardBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
@@ -1311,6 +1503,9 @@
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaskTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskTableBindingSource)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1321,12 +1516,9 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dgvService;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.BindingSource serviceBindingSource;
         private System.Windows.Forms.CheckBox cbIsServiceEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn serviceDelete;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnServiceAdd;
         private System.Windows.Forms.NumericUpDown nudServicePrice;
@@ -1430,5 +1622,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateLessonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn ttDelete;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.NumericUpDown nudClubCardSearch;
+        private System.Windows.Forms.Button btnClubCardReset;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.DataGridView dgvSearch;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtServiceSearch;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.NumericUpDown nudServiceSerach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewButtonColumn serviceDelete;
+        private System.Windows.Forms.BindingSource serviceBindingSource;
     }
 }

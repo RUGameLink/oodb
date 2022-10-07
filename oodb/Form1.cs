@@ -17,9 +17,10 @@ namespace oodb
 {
     /// <summary>
     /// Мысли в слух
-    /// Поиск абониментов, чьи абонименты заканчиваются или закончились 
-    /// Нельзя оставлять пустой ячейку в сотруднике(понятия не имею почему)
-    /// Реализовать проверку занятия в дату, тренера и зал
+    /// Поиск абониментов, чьи абонименты заканчиваются или закончились(готово)(linq)
+    /// Нельзя оставлять пустой ячейку в сотруднике(понятия не имею почему)(ПОЧИНИЛОСЬ)
+    /// Выдача человек у каждого тренера(linq)
+    /// Выдача услуги по названию и стоимости(soda)
     /// </summary>
     public partial class Form1 : Form
     {
@@ -39,7 +40,7 @@ namespace oodb
             dtpTaskTableDate.Format = DateTimePickerFormat.Custom;
             dtpTaskTableDate.CustomFormat = "MM/dd/yyyy HH:mm";
             dtpTaskTableDate.MinDate = DateTime.Now;
-
+            dgvSearch.DataSource = dataBase.Search();
         }
         void bindingSourceSetting()
         {
@@ -146,8 +147,8 @@ namespace oodb
         {
             selectedService = new Service();
             selectedService.id = dgvService.Rows[e.RowIndex].Cells[0].Value.ToString();
-            selectedService.title = dgvService.Rows[e.RowIndex].Cells[1].Value.ToString();
-            selectedService.price = (int)dgvService.Rows[e.RowIndex].Cells[2].Value;
+            selectedService.Title = dgvService.Rows[e.RowIndex].Cells[1].Value.ToString();
+            selectedService.Price = (int)dgvService.Rows[e.RowIndex].Cells[2].Value;
         }
 
         private void dgvService_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -159,8 +160,8 @@ namespace oodb
                 return;
             }
             service.id = dgvService.Rows[e.RowIndex].Cells[0].Value.ToString();
-            service.title = dgvService.Rows[e.RowIndex].Cells[1].Value.ToString();
-            service.price = (int)dgvService.Rows[e.RowIndex].Cells[2].Value;
+            service.Title = dgvService.Rows[e.RowIndex].Cells[1].Value.ToString();
+            service.Price = (int)dgvService.Rows[e.RowIndex].Cells[2].Value;
             if (service.Equals(selectedService))
             {
                 return;
@@ -168,8 +169,8 @@ namespace oodb
             var dialogResult = messageBoxClickResult("Изменить эту запись?");
             if (dialogResult == DialogResult.No)
             {
-                dgvService.Rows[e.RowIndex].Cells[1].Value = selectedService.title;
-                dgvService.Rows[e.RowIndex].Cells[2].Value = selectedService.price;
+                dgvService.Rows[e.RowIndex].Cells[1].Value = selectedService.Title;
+                dgvService.Rows[e.RowIndex].Cells[2].Value = selectedService.Price;
                 return;
             }
             if (dialogResult == DialogResult.Yes)
@@ -182,7 +183,7 @@ namespace oodb
         private void dgvService_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             messageBoxError("Введите числовое значение");
-            dgvService.Rows[e.RowIndex].Cells[2].Value = selectedService.price;
+            dgvService.Rows[e.RowIndex].Cells[2].Value = selectedService.Price;
         }
 
         private void btnServiceAdd_Click(object sender, EventArgs e)
@@ -192,8 +193,8 @@ namespace oodb
                 return;
             }
             var service = new Service();
-            service.price = (int)nudServicePrice.Value;
-            service.title = txtServiceTitle.Text;
+            service.Price = (int)nudServicePrice.Value;
+            service.Title = txtServiceTitle.Text;
             dataBase.AddService(service);
             txtServiceTitle.Clear();
             serviceBindingSource.Add(service);
@@ -722,6 +723,7 @@ namespace oodb
             dataBase.AddTaskTable(tt);
             taskTableBindingSource.Add(tt);
             messageBoxSuccessAdd();
+            dgvSearch.DataSource = dataBase.Search();
         }
 
         private void cbIsTaskTableEdit_CheckedChanged(object sender, EventArgs e)
@@ -753,5 +755,47 @@ namespace oodb
             }
         }
         #endregion
+
+        private void nudClubCardSearch_ValueChanged(object sender, EventArgs e)
+        {
+            var ans = dataBase.ClubCardSearch((int)nudClubCardSearch.Value);
+            clubCardBindingSource.Clear();
+            foreach(var cc in ans)
+            {
+                clubCardBindingSource.Add(cc);
+            }
+            Console.WriteLine();
+        }
+
+        private void btnClubCardReset_Click(object sender, EventArgs e)
+        {
+            nudClubCardSearch.Value = 0;
+            clubCardBindingSource.Clear();
+            foreach (var cc in dataBase.GetClubCard())
+            {
+                clubCardBindingSource.Add(cc);
+            }
+
+        }
+
+        private void nudServiceSerach_ValueChanged(object sender, EventArgs e)
+        {
+            var ans = dataBase.ServiceSearch((int)nudServiceSerach.Value, txtServiceSearch.Text);
+            serviceBindingSource.Clear();
+            foreach(var a in ans)
+            {
+                serviceBindingSource.Add(a);
+            }
+        }
+
+        private void txtServiceSearch_TextChanged(object sender, EventArgs e)
+        {
+            var ans = dataBase.ServiceSearch((int)nudServiceSerach.Value, txtServiceSearch.Text);
+            serviceBindingSource.Clear();
+            foreach (var a in ans)
+            {
+                serviceBindingSource.Add(a);
+            }
+        }
     }
 }

@@ -62,6 +62,7 @@
     <Compile Include="Classes\ClubCard.cs" />
     <Compile Include="Classes\DataBase.cs" />
     <Compile Include="Classes\Hall.cs" />
+    <Compile Include="Classes\Search.cs" />
     <Compile Include="Classes\Service.cs" />
     <Compile Include="Classes\Staff.cs" />
     <Compile Include="Classes\TaskTable.cs" />

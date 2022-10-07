@@ -1,4 +1,6 @@
 ﻿using Db4objects.Db4o;
+using Db4objects.Db4o.Linq;
+using Db4objects.Db4o.Query;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using static Db4objects.Db4o.Internal.Metadata.HierarchyAnalyzer;
 
 namespace oodb.Classes
 {
@@ -40,8 +43,8 @@ namespace oodb.Classes
         public void UpdateService(Service service)
         {
             var found = db.Query<Service>(src => src.id == service.id)[0];
-            found.price = service.price;
-            found.title = service.title;
+            found.Price = service.Price;
+            found.Title = service.Title;
             db.Store(found);
         }
         #endregion
@@ -142,6 +145,50 @@ namespace oodb.Classes
             db.Delete(found);
         }
         public List<TaskTable> GetTaskTable() => db.Query<TaskTable>().ToList();
+        #endregion
+        #region Поиски
+        public List<ClubCard> ClubCardSearch(int dayCount)
+        {
+            var ans = (from ClubCard cc in db.Cast<ClubCard>()
+                      where (cc.endCard - DateTime.Now).TotalDays <= dayCount
+                      select cc).ToList<ClubCard>();
+
+
+            return ans;
+        }
+        public List<Service> ServiceSearch(int price, string title)
+        {
+            IQuery query = db.Query();
+            query.Constrain(typeof(Service));
+            IQuery titleQuery = query.Descend("_title");
+            query.Descend("_price").Constrain(price).Greater().Equal().And(
+                titleQuery.Constrain(title).Like());
+            IObjectSet result = query.Execute();
+            var soda = new List<Service>();
+            foreach (var r in result)
+            {
+                soda.Add(r as Service);
+            }
+            return soda;
+        }
+        public List<Search> Search() { 
+            var asn = from TaskTable tt in db.Cast<TaskTable>()
+                                 group tt by tt.staff into t
+                                 select new { Name = t.Key,
+                                     Count = t.Count() }; ;
+            List<Search> lists = new List<Search>();
+            foreach(var an in asn)
+            {
+                lists.Add(new Classes.Search(an.Count, an.Name));
+            }
+            return lists;
+        }
+
+        internal void ServiceSearch(decimal value)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

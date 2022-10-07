@@ -10,12 +10,26 @@ namespace oodb.Classes
     internal class Service
     {
         [DisplayName("id")]
-        public string id { get; set; }  
-        [DisplayName("Название услуги")]
-        public string title { get; set; }
+        public string id { get; set; }
 
+        
+        private string _title;
+
+        [DisplayName("Название услуги")]
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; }
+        }
+
+        private int _price;
         [DisplayName("Цена")]
-        public int price { get; set; }
+        public int Price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
+
 
         public Service()
         {
@@ -25,21 +39,21 @@ namespace oodb.Classes
         public Service(string title, int price)
         {
             id = Guid.NewGuid().ToString();
-            this.title = title;
-            this.price = price;
+            this._title = title;
+            this._price = price;
         }
 
         public override bool Equals(object obj)
         {
             return obj is Service service &&
                    id == service.id &&
-                   title == service.title &&
-                   price == service.price;
+                   _title == service.Title &&
+                   _price == service._price;
         }
 
         public override string ToString()
         {
-            return title;
+            return Title;
         }
     }
 }
