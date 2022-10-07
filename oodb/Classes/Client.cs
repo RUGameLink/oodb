@@ -9,6 +9,7 @@ namespace oodb.Classes
 {
     internal class Client
     {
+
         [DisplayName("id")]
         public string id { get; set; }
         
