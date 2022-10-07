@@ -1430,4 +1430,3 @@
         private System.Windows.Forms.DataGridViewButtonColumn ttDelete;
     }
 }
-
